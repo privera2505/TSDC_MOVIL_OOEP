@@ -15,6 +15,6 @@ class AlbumDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Ejemplo de uso:
-        binding.textViewAlbumTitle.text = "Pantalla de Álbum"
+        //binding.textViewAlbumTitle.text = "Pantalla de Álbum"
     }
 }
