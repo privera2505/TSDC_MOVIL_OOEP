@@ -1,47 +1,23 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:orientation="horizontal"
-    android:background="@drawable/bg_menu_bottom"
-    android:gravity="center"
-    android:paddingHorizontal="16dp"
-    android:layout_gravity="bottom"
-    android:weightSum="4">
+    app:startDestination="@id/artistsFragment">
 
-    <!-- Ejemplo de ítem -->
-    <ImageButton
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:background="@drawable/bg_button"
-        android:src="@drawable/back_ico"
-        android:layout_marginHorizontal="10dp"
-        android:scaleType="center"/>
-
-    <ImageButton
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:background="@drawable/bg_button"
-        android:src="@drawable/back_ico"
-        android:layout_marginHorizontal="10dp"
-        android:scaleType="center"/>
-
-    <ImageButton
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:background="@drawable/bg_button"
-        android:src="@drawable/back_ico"
-        android:layout_marginHorizontal="10dp"
-        android:scaleType="center"/>
-
-    <ImageButton
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:background="@drawable/bg_button"
-        android:src="@drawable/back_ico"
-        android:layout_marginHorizontal="10dp"
-        android:scaleType="center"/>
-
-
-</LinearLayout>
+    <fragment
+        android:id="@+id/artistsFragment"
+        android:name="com.vinilo.ui.artists.ArtistsFragment"
+        android:label="Artistas" />
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="com.vinilo.ui.albums.AlbumsFragment"
+        android:label="Álbumes" />
+    <fragment
+        android:id="@+id/awardsFragment"
+        android:name="com.vinilo.ui.awards.AwardsFragment"
+        android:label="Premios" />
+    <fragment
+        android:id="@+id/collectorsFragment"
+        android:name="com.vinilo.ui.collectors.CollectorsFragment"
+        android:label="Coleccionistas" />
+</navigation>
