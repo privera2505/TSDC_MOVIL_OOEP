@@ -168,6 +168,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:padding="16dp"
+                    android:fadeScrollbars="false"
                     android:scrollbarThumbVertical="@drawable/scroll_thumb"
                     android:layout_marginTop="8dp">
 
@@ -199,8 +200,9 @@ Nunc at maximus purus. Maecenas rhoncus ipsum id dui suscipit dignissim. Aliquam
                 <!--CONTENIDOS-->
                 <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
+                    android:layout_height="200dp"
                     android:padding="16dp"
+                    android:fadeScrollbars="false"
                     android:scrollbarThumbVertical="@drawable/scroll_thumb"
                     android:layout_marginTop="8dp">
 
