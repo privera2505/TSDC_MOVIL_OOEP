@@ -4,14 +4,21 @@ import android.app.Activity
 import android.content.Intent
 import android.view.View
 import android.widget.ImageButton
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import com.vinilo.view.R
 import com.vinilo.view.MainActivity
-import com.vinilo.view.AlbumDetailActivity
+import com.vinilo.view.Album_Detail
+import com.vinilo.view.Artistas
+import com.vinilo.view.Home
+import com.vinilo.view.Premios
+
 // Importa otras actividades si las tenés
 
 class BottomNavManager(
     private val rootView: View,
-    private val activity: Activity
+    private val fragment: FragmentActivity,
+    private val containerId: Int
 ) {
 
     private val btnHome: ImageButton = rootView.findViewById(R.id.btnHome)
@@ -28,25 +35,26 @@ class BottomNavManager(
         btnHome.setOnClickListener {
             selectButton(btnHome)
             println("Click en Home")
-            activity.startActivity(Intent(activity, MainActivity::class.java))
+            replaceFragment(Home())
+
         }
 
         btnAlbums.setOnClickListener {
             selectButton(btnAlbums)
             println("Click en Álbumes")
-            activity.startActivity(Intent(activity, AlbumDetailActivity::class.java))
+            replaceFragment(Album_Detail())
         }
 
         btnPerformers.setOnClickListener {
             selectButton(btnPerformers)
             println("Click en Performers")
-            // TODO: Agrega el intent si tenés la Activity creada
+            replaceFragment(Artistas())
         }
 
         btnAwards.setOnClickListener {
             selectButton(btnAwards)
             println("Click en Awards")
-            // TODO: Agrega el intent si tenés la Activity creada
+            replaceFragment(Premios())
         }
     }
 
@@ -57,8 +65,14 @@ class BottomNavManager(
         }
     }
 
+    private fun replaceFragment(fragmet: Fragment){
+        fragment.supportFragmentManager.beginTransaction()
+            .replace(containerId,fragmet)
+            .commit()
+    }
+
     private fun setInitialState() {
-        // Marca uno por defecto si querés (opcional)
-        btnAlbums.isSelected = true
+        btnHome.isSelected = true
+        replaceFragment(Home())
     }
 }

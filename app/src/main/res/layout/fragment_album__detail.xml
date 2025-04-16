@@ -5,10 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_gradient" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -306,14 +302,5 @@ Nunc at maximus purus. Maecenas rhoncus ipsum id dui suscipit dignissim. Aliquam
         android:background="@drawable/bg_dark_shadow"
         android:layout_gravity="bottom"
         ></LinearLayout>
-
-    <!--MENU-->
-    <include
-        layout="@layout/custom_bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginHorizontal="15dp"
-        android:layout_gravity="bottom"/>
 
 </FrameLayout>
