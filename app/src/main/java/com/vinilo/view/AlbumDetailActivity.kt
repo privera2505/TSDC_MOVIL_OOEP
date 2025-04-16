@@ -1,18 +1,23 @@
 package com.vinilo.view
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.vinilo.util.BottomNavManager
+import com.vinilo.view.databinding.FragmentAlbumsBinding
 
 class AlbumDetailActivity : AppCompatActivity() {
 
+    private lateinit var binding: FragmentAlbumsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = FragmentAlbumsBinding.inflate(layoutInflater)
+        setContentView(R.layout.fragment_albums)
 
-        setContentView(R.layout.activity_album_detail)
-
-        val bottomNavView = findViewById<View>(R.id.custom_bottom_nav)
-        BottomNavManager(bottomNavView, this)
+        binding.buttonOpenAlbum.setOnClickListener {
+            val intent = Intent(this, AlbumDetailActivity::class.java)
+            startActivity(intent)
+            println("Desde Albumes")
+        }
     }
 }

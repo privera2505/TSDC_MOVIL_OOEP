@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@drawable/bg_gradient"
     android:layout_height="match_parent">
 
     <!-- NavHostFragment para contener los fragments -->
@@ -18,10 +19,16 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_gravity="bottom"
         app:menu="@menu/bottom_nav_menu"
-        android:background="?android:attr/windowBackground"
+        android:background="@drawable/bg_menu_bottom"
+        android:layout_marginHorizontal="25dp"
         app:itemIconTint="@color/selector_bottom_nav"
-        app:itemTextColor="@color/selector_bottom_nav"/>
+        app:itemTextColor="@color/selector_bottom_nav"
+        app:itemIconSize="25dp"
+        app:labelVisibilityMode="unlabeled"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemActiveIndicatorStyle="@android:color/transparent"
+        app:itemBackground="@drawable/bg_item_menu" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

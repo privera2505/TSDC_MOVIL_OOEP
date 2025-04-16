@@ -8,26 +8,29 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.vinilo.view.R
 import com.vinilo.view.databinding.FragmentAlbumDetailBinding
-import com.vinilo.view.databinding.FragmentAlbumsBinding
 
-class AlbumsFragment : Fragment() {
-    private var _binding: FragmentAlbumsBinding? = null
+class AlbumsDetailFragment : Fragment() {
+    private var _binding: FragmentAlbumDetailBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAlbumsBinding.inflate(inflater, container, false)
+        _binding = FragmentAlbumDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonOpenAlbum.setOnClickListener {
-            findNavController().navigate(R.id.AlbumDetailFragment)
+        binding.backBtnAlbum.setOnClickListener{
+            findNavController().navigate(R.id.albumsFragment)
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

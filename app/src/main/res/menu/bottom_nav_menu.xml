@@ -2,15 +2,15 @@
     <item
         android:id="@+id/artistsFragment"
         android:title="Artistas"
-        android:icon="@drawable/ic_artists"/>
+        android:icon="@drawable/performer_ico"/>
     <item
         android:id="@+id/albumsFragment"
         android:title="Álbumes"
-        android:icon="@drawable/ic_albums"/>
+        android:icon="@drawable/album_ico"/>
     <item
         android:id="@+id/awardsFragment"
         android:title="Premios"
-        android:icon="@drawable/ic_awards"/>
+        android:icon="@drawable/award_ico"/>
     <item
         android:id="@+id/collectorsFragment"
         android:title="Coleccionistas"

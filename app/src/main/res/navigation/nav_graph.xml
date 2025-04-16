@@ -20,4 +20,8 @@
         android:id="@+id/collectorsFragment"
         android:name="com.vinilo.ui.collectors.CollectorsFragment"
         android:label="Coleccionistas" />
+    <fragment
+        android:id="@+id/AlbumDetailFragment"
+        android:name="com.vinilo.ui.albums.AlbumsDetailFragment"
+        android:label="Detalle de Album" />
 </navigation>
