@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ViniloApp</string>
+    <string name="album_cover">Portada del álbum</string>
 </resources>
