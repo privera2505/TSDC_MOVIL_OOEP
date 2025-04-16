@@ -1,7 +1,6 @@
 package com.vinilo.ui.albums
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,14 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vinilo.viewmodel.AlbumsViewModel
 import com.vinilo.view.R
 
 class AlbumsFragment : Fragment() {
 
-    private lateinit var albumViewModel: AlbumsViewModel // Asegúrate de tener este ViewModelval albumViewModel: AlbumsViewModel by viewModels()
+    private lateinit var albumViewModel: AlbumsViewModel
     private lateinit var recyclerView: RecyclerView
     private lateinit var albumAdapter: AlbumAdapter
 
@@ -31,7 +29,7 @@ class AlbumsFragment : Fragment() {
         // Aquí puedes obtener la referencia al RecyclerView
         recyclerView = binding.findViewById(R.id.recycler_albums)
 
-        val layoutManager = GridLayoutManager(requireContext(), 2) // O usa GridLayoutManager para un grid
+        val layoutManager = GridLayoutManager(requireContext(), 2)
         recyclerView.layoutManager = layoutManager
 
         // Inicializamos el ViewModel y observamos los cambios en los datos
