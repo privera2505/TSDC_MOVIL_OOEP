@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/artistsFragment"
+        android:title="Artistas"
+        android:icon="@drawable/ic_artists"/>
+    <item
+        android:id="@+id/albumsFragment"
+        android:title="Álbumes"
+        android:icon="@drawable/ic_albums"/>
+    <item
+        android:id="@+id/awardsFragment"
+        android:title="Premios"
+        android:icon="@drawable/ic_awards"/>
+    <item
+        android:id="@+id/collectorsFragment"
+        android:title="Coleccionistas"
+        android:icon="@drawable/ic_collectors"/>
+</menu>
