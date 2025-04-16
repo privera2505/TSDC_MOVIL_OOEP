@@ -75,12 +75,6 @@
         android:layout_marginBottom="8dp"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonOpenAlbum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ver Álbum"
-        tools:ignore="MissingConstraints" />
 
     <!-- Grid de álbumes -->
     <androidx.recyclerview.widget.RecyclerView

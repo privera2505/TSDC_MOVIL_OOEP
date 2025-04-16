@@ -102,7 +102,7 @@
                         android:textColor="@color/white"/>
 
                     <TextView
-                        android:id="@+id/tracksAlbum"
+                        android:id="@+id/genraText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tracks album"
@@ -147,7 +147,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/nameAlbumNameDescription"
+                            android:id="@+id/AlbumNameDescription"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Nombre del álbum"
@@ -158,7 +158,7 @@
                             android:textColor="@color/white"/>
 
                         <TextView
-                            android:id="@+id/tracksAlbumDescription"
+                            android:id="@+id/releaseDate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Año 2025"
@@ -179,7 +179,7 @@
                     android:layout_marginTop="8dp">
 
                     <TextView
-                        android:id="@+id/tracksAlbumDescription2"
+                        android:id="@+id/tracksAlbumDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam velit diam, finibus vitae justo eget, iaculis pharetra lacus. Maecenas bibendum maximus dapibus. Etiam dictum in lacus sit amet tempus. Aenean et mattis mauris. Maecenas a aliquet diam. Vestibulum a sagittis dui. Nam auctor tortor et tortor condimentum, ut sollicitudin justo rutrum. Proin at malesuada libero. Curabitur non commodo ex. Morbi aliquam diam vitae est consequat, sit amet facilisis metus facilisis. Aenean vitae urna non ipsum tempor blandit eu et odio. Fusce facilisis ipsum non scelerisque scelerisque. Duis scelerisque pulvinar pulvinar. Maecenas placerat euismod condimentum. Etiam eu justo vitae justo efficitur posuere.

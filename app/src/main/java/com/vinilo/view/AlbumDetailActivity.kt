@@ -13,11 +13,5 @@ class AlbumDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = FragmentAlbumsBinding.inflate(layoutInflater)
         setContentView(R.layout.fragment_albums)
-
-        binding.buttonOpenAlbum.setOnClickListener {
-            val intent = Intent(this, AlbumDetailActivity::class.java)
-            startActivity(intent)
-            println("Desde Albumes")
-        }
     }
 }

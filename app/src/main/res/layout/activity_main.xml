@@ -15,6 +15,14 @@
         app:navGraph="@navigation/nav_graph"
         app:defaultNavHost="true" />
 
+    <!--SHADOW BOX-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/bg_dark_shadow"
+        android:layout_gravity="bottom"
+        ></LinearLayout>
+
     <!-- BottomNavigationView -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

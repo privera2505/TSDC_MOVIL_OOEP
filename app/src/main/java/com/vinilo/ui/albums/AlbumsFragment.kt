@@ -6,48 +6,69 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.vinilo.model.Album
 import com.vinilo.viewmodel.AlbumsViewModel
 import com.vinilo.view.R
+import com.vinilo.view.databinding.FragmentAlbumsBinding
 
 class AlbumsFragment : Fragment() {
 
     private lateinit var albumViewModel: AlbumsViewModel
     private lateinit var recyclerView: RecyclerView
     private lateinit var albumAdapter: AlbumAdapter
+    private var _binding: FragmentAlbumsBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflamos el layout
-        val binding = inflater.inflate(R.layout.fragment_albums, container, false)
+    ): View {
+        _binding = FragmentAlbumsBinding.inflate(inflater, container, false)
 
-        // Aquí puedes obtener la referencia al RecyclerView
-        recyclerView = binding.findViewById(R.id.recycler_albums)
+        recyclerView = binding.recyclerAlbums
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        val layoutManager = GridLayoutManager(requireContext(), 2)
-        recyclerView.layoutManager = layoutManager
+        albumViewModel = ViewModelProvider(this)[AlbumsViewModel::class.java]
 
-        // Inicializamos el ViewModel y observamos los cambios en los datos
-        albumViewModel = ViewModelProvider(this).get(AlbumsViewModel::class.java)
-
-        albumViewModel.albums.observe(viewLifecycleOwner, Observer { albums ->
-            // Cuando recibimos los datos, actualizamos el adapter con la nueva lista
-            albumAdapter = AlbumAdapter(albums)
+        albumViewModel.albums.observe(viewLifecycleOwner) { albums ->
+            albumAdapter = AlbumAdapter(albums, ::onAlbumClick)
             recyclerView.adapter = albumAdapter
-        })
+        }
 
         albumViewModel.error.observe(viewLifecycleOwner) { errorMsg ->
             Toast.makeText(requireContext(), errorMsg, Toast.LENGTH_LONG).show()
         }
 
-        // Disparar la carga de datos
         albumViewModel.fetchAlbums()
-        return binding
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.albumListTitle.setOnClickListener {
+            println("click en titulo")
+            findNavController().navigate(R.id.AlbumDetailFragment)
+        }
+    }
+
+    private fun onAlbumClick(album: Album) {
+        val bundle = Bundle().apply {
+            putInt("albumId", album.id)
+        }
+
+        findNavController().navigate(R.id.AlbumDetailFragment, bundle)
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
 

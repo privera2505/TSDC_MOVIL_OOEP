@@ -12,4 +12,8 @@ class AlbumRepository {
     suspend fun getAlbums(): List<Album> {
         return albumService.getAlbums()
     }
+
+    suspend fun getAlbumById(id: Int): Album {
+        return albumService.getAlbumById(id)
+    }
 }

@@ -23,5 +23,9 @@
     <fragment
         android:id="@+id/AlbumDetailFragment"
         android:name="com.vinilo.ui.albums.AlbumsDetailFragment"
-        android:label="Detalle de Album" />
+        android:label="Detalle de Album">
+        <argument
+            android:name="albumId"
+            app:argType="integer" />
+    </fragment>
 </navigation>
