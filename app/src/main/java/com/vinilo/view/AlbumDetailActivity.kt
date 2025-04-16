@@ -1,20 +1,18 @@
 package com.vinilo.view
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.vinilo.view.databinding.ActivityAlbumDetailBinding
+import com.vinilo.util.BottomNavManager
 
 class AlbumDetailActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityAlbumDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityAlbumDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_album_detail)
 
-        // Ejemplo de uso:
-        //binding.textViewAlbumTitle.text = "Pantalla de Álbum"
+        val bottomNavView = findViewById<View>(R.id.custom_bottom_nav)
+        BottomNavManager(bottomNavView, this)
     }
 }
