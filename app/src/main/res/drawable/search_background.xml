@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <solid android:color="#1E1E1E" /> <!-- Color de fondo del buscador -->
+    <solid android:color="#40FFFFFF" /> <!-- Color de fondo del buscador -->
     <corners android:radius="16dp" /> <!-- Bordes redondeados -->
     <padding
         android:left="12dp"
