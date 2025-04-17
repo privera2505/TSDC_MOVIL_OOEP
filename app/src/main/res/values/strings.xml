@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ViniloApp</string>
     <string name="album_cover">Portada del álbum</string>
+    <string name="performer_cover">Portada del cantante</string>
 </resources>
