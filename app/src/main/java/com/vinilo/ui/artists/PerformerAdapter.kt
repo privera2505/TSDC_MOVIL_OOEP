@@ -24,7 +24,7 @@ class PerformerAdapter (
         val perfomer = performers[position]
         holder.performerName.text = perfomer.name
         Glide.with(holder.itemView.context)
-            .load(perfomer.image)
+            .load(perfomer.image.trim())
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_artists)
             .into(holder.performerImage)

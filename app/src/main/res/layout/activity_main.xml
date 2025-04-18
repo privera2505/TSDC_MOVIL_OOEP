@@ -21,22 +21,24 @@
         android:layout_height="300dp"
         android:background="@drawable/bg_dark_shadow"
         android:layout_gravity="bottom"
-        ></LinearLayout>
+        >
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="25dp"
+            android:background="@drawable/bg_menu_bottom"
+            app:itemActiveIndicatorStyle="@android:color/transparent"
+            app:itemBackground="@drawable/bg_item_menu"
+            app:itemIconSize="25dp"
+            app:itemIconTint="@color/selector_bottom_nav"
+            app:itemRippleColor="@android:color/transparent"
+            app:itemTextColor="@color/selector_bottom_nav"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_nav_menu" />
+    </LinearLayout>
 
     <!-- BottomNavigationView -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom"
-        app:menu="@menu/bottom_nav_menu"
-        android:background="@drawable/bg_menu_bottom"
-        android:layout_marginHorizontal="25dp"
-        app:itemIconTint="@color/selector_bottom_nav"
-        app:itemTextColor="@color/selector_bottom_nav"
-        app:itemIconSize="25dp"
-        app:labelVisibilityMode="unlabeled"
-        app:itemRippleColor="@android:color/transparent"
-        app:itemActiveIndicatorStyle="@android:color/transparent"
-        app:itemBackground="@drawable/bg_item_menu" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
