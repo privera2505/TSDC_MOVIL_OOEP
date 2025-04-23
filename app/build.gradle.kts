@@ -71,5 +71,23 @@ dependencies {
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+    // Espresso core
+    androidTestImplementation(libs.androidx.espresso.core.v351)
+    androidTestImplementation(libs.androidx.fragment.testing)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    // JUnit para pruebas Android
+    androidTestImplementation(libs.androidx.junit.v115)
+
+    // Reglas de prueba
+    androidTestImplementation(libs.androidx.rules)
+
+    // Opcionales
+    androidTestImplementation(libs.androidx.espresso.intents)
+    androidTestImplementation(libs.androidx.espresso.contrib)
+
+    // Dependencias normales de test (unitarias)
+    testImplementation(libs.junit)
+
 
 }

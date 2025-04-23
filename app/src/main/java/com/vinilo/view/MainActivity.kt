@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.vinilo.view.R
 import com.vinilo.view.databinding.ActivityMainBinding
 import com.vinilo.viewmodel.MainViewModel
 
