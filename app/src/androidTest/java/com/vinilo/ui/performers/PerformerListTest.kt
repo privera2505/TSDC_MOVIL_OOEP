@@ -9,17 +9,12 @@ import org.junit.Rule
 import org.junit.runner.RunWith
 import com.vinilo.view.R
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.ViewAction
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.contrib.RecyclerViewActions
 import org.junit.Test
 import org.junit.Assert.assertTrue
-import androidx.test.espresso.UiController
-import android.view.View
-import android.widget.TextView
-import org.junit.Assert.assertEquals
 
 @RunWith(AndroidJUnit4::class)
 class PerformerListTest {
