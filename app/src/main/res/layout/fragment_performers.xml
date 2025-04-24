@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/appTitle"
+            android:id="@+id/artistTitle"
             android:layout_width="0dp"
             android:layout_height="51dp"
             android:layout_weight="5"
