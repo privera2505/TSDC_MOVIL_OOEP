@@ -1,13 +1,11 @@
 package com.vinilo.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.vinilo.view.R
 import com.vinilo.view.databinding.ActivityMainBinding
 import com.vinilo.viewmodel.MainViewModel
 
