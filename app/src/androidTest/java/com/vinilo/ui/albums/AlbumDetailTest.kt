@@ -12,7 +12,6 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
-import com.vinilo.enums.Genre
 import com.vinilo.view.MainActivity
 import com.vinilo.view.R
 import org.junit.Before
