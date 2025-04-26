@@ -1,9 +1,11 @@
 package com.vinilo.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.vinilo.view.databinding.ActivityMainBinding
 import com.vinilo.viewmodel.MainViewModel
 
@@ -18,17 +20,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Observar LiveData del ViewModel
-        viewModel.user.observe(this) { user ->
-            binding.textViewUserName.text = "Nombre:" + user.name
-        }
+        val navController = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment)!!
+            .findNavController()
 
-        // Cargar datos
-        viewModel.loadUser()
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView.setupWithNavController(navController)
 
-        binding.buttonOpenAlbum.setOnClickListener {
-            val intent = Intent(this, AlbumDetailActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

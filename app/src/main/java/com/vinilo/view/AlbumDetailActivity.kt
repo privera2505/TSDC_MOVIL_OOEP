@@ -1,20 +1,18 @@
 package com.vinilo.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.vinilo.view.databinding.ActivityAlbumDetailBinding
+import com.vinilo.view.R
+import com.vinilo.view.databinding.FragmentAlbumsBinding
 
 class AlbumDetailActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAlbumDetailBinding
+    private lateinit var binding: FragmentAlbumsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityAlbumDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        // Ejemplo de uso:
-        binding.textViewAlbumTitle.text = "Pantalla de Álbum"
+        binding = FragmentAlbumsBinding.inflate(layoutInflater)
+        setContentView(R.layout.fragment_albums)
     }
 }

@@ -45,6 +45,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.espresso.contrib)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -59,4 +60,35 @@ dependencies {
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    // Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    // Converter JSON (Gson)
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    // Coroutines (para llamadas asincrónicas si usas ViewModel)
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    // Logging (opcional pero útil para debug)
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    // Espresso core
+    androidTestImplementation(libs.androidx.espresso.core.v351)
+    androidTestImplementation(libs.androidx.fragment.testing)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    // JUnit para pruebas Android
+    androidTestImplementation(libs.androidx.junit.v115)
+
+    // Reglas de prueba
+    androidTestImplementation(libs.androidx.rules)
+
+    // Opcionales
+    androidTestImplementation(libs.androidx.espresso.intents)
+    androidTestImplementation(libs.androidx.espresso.contrib)
+
+    // Dependencias normales de test (unitarias)
+    testImplementation(libs.junit)
+
+
 }

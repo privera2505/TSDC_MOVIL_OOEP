@@ -1,8 +1,19 @@
 package com.vinilo.enums
 
+import com.google.gson.annotations.SerializedName
+
 enum class Genre(val displayName: String) {
-    CLASSICAL("Classical"),
+    @SerializedName("Classical")
+    CLASSICAL("Clásica"),
+
+    @SerializedName("Salsa")
     SALSA("Salsa"),
+
+    @SerializedName("Rock")
     ROCK("Rock"),
-    FOLK("Folk")
+
+    @SerializedName("Folk")
+    FOLK("Folk");
+
+    override fun toString(): String = displayName
 }
