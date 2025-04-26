@@ -9,11 +9,9 @@ Vinilo App es una aplicación móvil desarrollada para dispositivos Android que 
 - Gestionar y consultar premios relacionados con artistas
 - Interfaz amigable y fácil de usar
 
-# Capturas de Pantalla
-
 # Descarga e Instalación APK
 
-1. Descarga el archivo APK desde [Enlace APK](../APK/Entrega%201).
+1. Descarga el archivo APK desde [Enlace APK](APK/Entrega%201).
 2. En tu dispositivo Android, ve a Configuración > Seguridad y habilita la opción Fuentes desconocidas.
 3. Navega hasta la carpeta donde se descargó el archivo APK.
 4. Pulsa sobre el archivo APK para instalar.
@@ -48,7 +46,7 @@ Vinilo App es una aplicación móvil desarrollada para dispositivos Android que 
 - Ejecuta la aplicación seleccionando tu dispositivo virtual o físico y presionando el botón Run.
 
 # Estructura de archivos
-
+````
 ViniloApp/
 ├── .gradle/
 ├── .idea/
@@ -74,6 +72,7 @@ ViniloApp/
 ├── local.properties
 ├── README.md
 └── settings.gradle.kts
+````
 
 # Tecnologías Utilizadas
 
