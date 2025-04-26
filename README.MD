@@ -79,3 +79,33 @@ ViniloApp/
 - Kotlin
 - MVVM
 - Android Jetpack (Navigation, ViewModel, LiveData)
+
+# Servicios Backend
+
+Para el desarrollo de esta aplicación se consume un servicio Rest a travez del [Vinilo Backend](https://github.com/TheSoftwareDesignLab/BackVynils) el cual se configuró por medio de un archivo ubicado en:
+
+````
+app/src/main/java/com/vinilo/network/apiClient.kt
+````
+
+En la variable **BASE_URL** se puede setear y apuntar a la URL base del proyecto de backend, bien sea en un docker (local) o de forma remota.
+
+En este caso el equipo subio de forma remota el proyecto del backend y base de datos. La URL base que utilizamos con el servicio de **Railway** es:
+
+````
+https://backvynils-production.up.railway.app/
+````
+**Nota:** Indispensable mantener el slash al final para que funcionen los path de los llamados en los archivos de servicios.
+
+# Pruebas E2E
+
+Para ejecutar las pruebas end-to-end (E2E) de la aplicación, asegúrate de estar ubicado en la carpeta raíz del proyecto. Una vez allí, abre una terminal y ejecuta el siguiente comando:
+
+````
+./gradlew connectedAndroidTest
+````
+Este comando se encarga de compilar y ejecutar todas las pruebas instrumentadas que se encuentran en la carpeta androidTest. Es importante que tengas un emulador o dispositivo físico conectado y en ejecución, ya que estas pruebas requieren un entorno Android para ejecutarse.
+
+# Resultados de pruebas
+
+- [Resultados entrega 1](/app/src/androidTest/results/entrega-1/Entrega1.md)
