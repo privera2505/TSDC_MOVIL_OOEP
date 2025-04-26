@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/album_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- TopBar -->
+    <LinearLayout
+        android:id="@+id/albumListTopBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_background"
+            android:src="@drawable/ic_menu"
+            android:tint="#FFFFFF"
+            android:contentDescription="Menu" />
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Vinilo App"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_background"
+            android:src="@drawable/ic_search"
+            android:tint="#FFFFFF"
+            android:contentDescription="Buscar" />
+    </LinearLayout>
+
+    <!-- Search prompt -->
+    <TextView
+        android:id="@+id/searchPrompt"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="¿Qué álbum quieres escuchar hoy?"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_gray_background"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/albumListTopBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Título catálogo -->
+    <TextView
+        android:id="@+id/albumListTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Catálogo de álbum"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/searchPrompt"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Grid de álbumes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/albumRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        app:layout_constraintTop_toBottomOf="@id/albumListTitle"
+        app:layout_constraintBottom_toTopOf="@id/albumNavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp" />
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/albumNavBar"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#1A1A1A"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Ítems inferiores (solo uno activo) -->
+        <View android:layout_width="48dp" android:layout_height="48dp"
+            android:background="@drawable/circle_background_dark" />
+
+        <View android:layout_width="48dp" android:layout_height="48dp"
+            android:background="@drawable/circle_background_dark"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:id="@+id/albumsTab"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:text="Álbumes"
+            android:background="@drawable/rounded_white_background"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <View android:layout_width="48dp" android:layout_height="48dp"
+            android:background="@drawable/circle_background_dark" />
+
+        <View android:layout_width="48dp" android:layout_height="48dp"
+            android:background="@drawable/circle_background_dark"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,15 +1,319 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/textViewAlbumTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cargando álbum..."
-        android:textSize="20sp"/>
-</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!--HEADER-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center_horizontal">
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/bg_button"
+                    android:src="@drawable/back_ico"
+                    android:scaleType="center"/>
+
+                <TextView
+                    android:id="@+id/albumSectionTitle"
+                    android:layout_width="210dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Detalle de álbum"
+                    android:paddingTop="20dp"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/white"/>
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/bg_button"
+                    android:src="@drawable/share_ico"
+                    android:scaleType="center"/>
+            </LinearLayout>
+
+            <!--CARD DE ALBUM-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_card"
+                android:elevation="4dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/imageAlbumCover"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_launcher_background" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/nameAlbumName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre del álbum"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingTop="8dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/tracksAlbum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tracks album"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:paddingTop="4dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--CARD DE DESCRIPCIÓN DE ALBUM-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_card_with_shadow"
+                android:elevation="4dp"
+                android:gravity="center_vertical">
+
+                <!--CABECERA-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/imageAlbumCoverDescription"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/ic_launcher_background" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/nameAlbumNameDescription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre del álbum"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:paddingTop="8dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/tracksAlbumDescription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Año 2025"
+                            android:textSize="14sp"
+                            android:paddingTop="4dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--CONTENIDOS-->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:padding="16dp"
+                    android:fadeScrollbars="false"
+                    android:scrollbarThumbVertical="@drawable/scroll_thumb"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/tracksAlbumDescription2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam velit diam, finibus vitae justo eget, iaculis pharetra lacus. Maecenas bibendum maximus dapibus. Etiam dictum in lacus sit amet tempus. Aenean et mattis mauris. Maecenas a aliquet diam. Vestibulum a sagittis dui. Nam auctor tortor et tortor condimentum, ut sollicitudin justo rutrum. Proin at malesuada libero. Curabitur non commodo ex. Morbi aliquam diam vitae est consequat, sit amet facilisis metus facilisis. Aenean vitae urna non ipsum tempor blandit eu et odio. Fusce facilisis ipsum non scelerisque scelerisque. Duis scelerisque pulvinar pulvinar. Maecenas placerat euismod condimentum. Etiam eu justo vitae justo efficitur posuere.
+
+Nunc at maximus purus. Maecenas rhoncus ipsum id dui suscipit dignissim. Aliquam aliquam ante non tincidunt aliquet. Phasellus ornare vestibulum vehicula. Sed egestas fermentum libero a ultrices. Duis non mi id nisi consequat porta. Sed in efficitur elit. Nulla et felis sed dui vehicula aliquet. Maecenas eget scelerisque sem, vel feugiat arcu. Mauris lobortis neque in magna consequat, et porta sem finibus. Morbi in orci accumsan, varius ante eget, luctus massa."
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppins_light"
+                        android:textColor="@color/white"/>
+
+
+                </ScrollView>
+
+            </LinearLayout>
+
+            <!--CARD DE TRACKS DE ALBUM-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_card"
+                android:elevation="4dp"
+                android:gravity="center_vertical">
+
+                <!--CONTENIDOS-->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:padding="16dp"
+                    android:fadeScrollbars="false"
+                    android:scrollbarThumbVertical="@drawable/scroll_thumb"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/titleTracksSection"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tracks del Álbum"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:paddingTop="8dp"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:textColor="@color/white"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageAlbumCoverTrack"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:scaleType="centerCrop"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:src="@drawable/ic_launcher_background" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/nameTrack"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Nombre del álbum"
+                                    android:textSize="16sp"
+                                    android:paddingTop="8dp"
+                                    android:fontFamily="@font/poppins_light"
+                                    android:textColor="@color/white"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/nameAlbunInTrack"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Nombre del álbum"
+                                        android:textSize="14sp"
+                                        android:paddingTop="4dp"
+                                        android:fontFamily="@font/poppins_light"
+                                        android:textColor="@color/white"/>
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1" />
+
+                                    <TextView
+                                        android:id="@+id/trackDuration"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="03:52"
+                                        android:textSize="14sp"
+                                        android:paddingTop="4dp"
+                                        android:fontFamily="@font/poppins_light"
+                                        android:textColor="@color/white"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--SHADOW BOX-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/bg_dark_shadow"
+        android:layout_gravity="bottom"
+        ></LinearLayout>
+
+    <!--MENU-->
+    <include
+        layout="@layout/custom_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_gravity="bottom"/>
+
+</FrameLayout>
