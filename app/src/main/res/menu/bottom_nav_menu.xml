@@ -14,5 +14,5 @@
     <item
         android:id="@+id/collectorsFragment"
         android:title="Coleccionistas"
-        android:icon="@drawable/ic_collectors"/>
+        android:icon="@drawable/collector_ico_w"/>
 </menu>
