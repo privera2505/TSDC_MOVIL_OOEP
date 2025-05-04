@@ -7,11 +7,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.vinilo.model.Album
 import com.vinilo.model.Performer
 import com.vinilo.view.R
 
 class PerformerAdapter (
-    private val performers: List<Performer>
+    private val performers: List<Performer>,
+    private val onPerformerClick: (Performer) -> Unit
 ) : RecyclerView.Adapter<PerformerAdapter.PerformerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PerformerViewHolder {
@@ -28,6 +30,10 @@ class PerformerAdapter (
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_artists)
             .into(holder.performerImage)
+
+        holder.itemView.setOnClickListener {
+            onPerformerClick(perfomer)
+        }
     }
 
     override fun getItemCount(): Int {

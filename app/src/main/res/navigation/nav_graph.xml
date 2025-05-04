@@ -28,4 +28,12 @@
             android:name="albumId"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/ArtistDetailFragment"
+        android:name="com.vinilo.ui.artists.ArtistDetailFragment"
+        android:label="Detalle de Artista">
+        <argument
+            android:name="performerId"
+            app:argType="integer" />
+    </fragment>
 </navigation>
