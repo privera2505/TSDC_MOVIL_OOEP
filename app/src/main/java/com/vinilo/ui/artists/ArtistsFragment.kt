@@ -8,8 +8,11 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.vinilo.model.Album
+import com.vinilo.model.Performer
 import com.vinilo.view.databinding.FragmentPerformersBinding
 import com.vinilo.viewmodel.PerformerViewModel
 import com.vinilo.view.R
@@ -37,7 +40,7 @@ class ArtistsFragment : Fragment()  {
         performerViewModel = ViewModelProvider(this)[PerformerViewModel::class.java]
 
         performerViewModel.performers.observe(viewLifecycleOwner) { performers ->
-            performerAdapter = PerformerAdapter(performers)
+            performerAdapter = PerformerAdapter(performers, ::onPerformerClick)
             recyclerView.adapter = performerAdapter
         }
 
@@ -49,6 +52,29 @@ class ArtistsFragment : Fragment()  {
 
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.root.setOnClickListener {
+            println("click en artista")
+            //findNavController().navigate(R.id.Artist)
+        }
+    }
+
+    private fun onPerformerClick(performer: Performer) {
+        val bundle = Bundle().apply {
+            putInt("performerId", performer.id)
+        }
+
+        findNavController().navigate(R.id.ArtistDetailFragment, bundle)
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }
