@@ -1,9 +1,8 @@
-package com.vinilo.repository
+package com.vinilo.data.repository
 
-import com.vinilo.model.Album
-import com.vinilo.network.ApiClient
-import com.vinilo.network.PerformerService
-import com.vinilo.model.Performer
+import com.vinilo.data.remote.services.ApiClient
+import com.vinilo.data.remote.services.PerformerService
+import com.vinilo.domain.model.Performer
 
 class PerformerRepository {
 

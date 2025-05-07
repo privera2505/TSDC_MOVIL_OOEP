@@ -1,6 +1,5 @@
 package com.vinilo.ui.artists
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.vinilo.model.Album
+import com.vinilo.domain.model.Album
 import com.vinilo.view.R
 import java.text.SimpleDateFormat
 

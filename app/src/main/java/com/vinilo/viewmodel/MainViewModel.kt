@@ -3,8 +3,8 @@ package com.vinilo.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.vinilo.model.User
-import com.vinilo.repository.UserRepository
+import com.vinilo.domain.model.User
+import com.vinilo.data.repository.UserRepository
 
 class MainViewModel : ViewModel() {
     private val _user = MutableLiveData<User>()

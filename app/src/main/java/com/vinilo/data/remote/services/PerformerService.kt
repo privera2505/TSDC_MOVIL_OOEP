@@ -1,7 +1,6 @@
-package com.vinilo.network
+package com.vinilo.data.remote.services
 
-import com.vinilo.model.Album
-import com.vinilo.model.Performer
+import com.vinilo.domain.model.Performer
 import retrofit2.http.GET
 import retrofit2.http.Path
 

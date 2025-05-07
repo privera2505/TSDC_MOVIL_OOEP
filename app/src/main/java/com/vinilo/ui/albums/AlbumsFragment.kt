@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.vinilo.model.Album
+import com.vinilo.domain.model.Album
 import com.vinilo.viewmodel.AlbumsViewModel
 import com.vinilo.view.R
 import com.vinilo.view.databinding.FragmentAlbumsBinding

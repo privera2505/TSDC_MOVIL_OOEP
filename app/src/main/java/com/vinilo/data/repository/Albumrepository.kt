@@ -1,8 +1,8 @@
-package com.vinilo.repository
+package com.vinilo.data.repository
 
-import com.vinilo.network.AlbumService
-import com.vinilo.network.ApiClient
-import com.vinilo.model.Album
+import com.vinilo.data.remote.services.AlbumService
+import com.vinilo.data.remote.services.ApiClient
+import com.vinilo.domain.model.Album
 
 class AlbumRepository {
 

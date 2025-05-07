@@ -3,8 +3,8 @@ package com.vinilo.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.vinilo.repository.PerformerRepository
-import com.vinilo.model.Performer
+import com.vinilo.data.repository.PerformerRepository
+import com.vinilo.domain.model.Performer
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 

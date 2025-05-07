@@ -1,6 +1,6 @@
-package com.vinilo.repository
+package com.vinilo.data.repository
 
-import com.vinilo.model.User
+import com.vinilo.domain.model.User
 
 class UserRepository {
 

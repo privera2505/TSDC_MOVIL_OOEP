@@ -1,4 +1,4 @@
-package com.vinilo.model
+package com.vinilo.domain.model
 
 import java.util.Date
 

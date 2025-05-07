@@ -1,6 +1,6 @@
-package com.vinilo.network
+package com.vinilo.data.remote.services
 
-import com.vinilo.model.Collector
+import com.vinilo.domain.model.Collector
 import retrofit2.http.GET
 
 interface CollectorService {

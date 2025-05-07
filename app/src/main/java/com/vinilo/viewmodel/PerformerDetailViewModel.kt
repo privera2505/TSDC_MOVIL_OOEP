@@ -4,10 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vinilo.model.Album
-import com.vinilo.model.Performer
-import com.vinilo.repository.AlbumRepository
-import com.vinilo.repository.PerformerRepository
+import com.vinilo.domain.model.Performer
+import com.vinilo.data.repository.PerformerRepository
 import kotlinx.coroutines.launch
 
 class PerformerDetailViewModel : ViewModel() {

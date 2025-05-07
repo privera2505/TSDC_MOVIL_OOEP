@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vinilo.model.Album
-import com.vinilo.repository.AlbumRepository
+import com.vinilo.domain.model.Album
+import com.vinilo.data.repository.AlbumRepository
 import kotlinx.coroutines.launch
 
 class AlbumsDetailViewModel : ViewModel() {
