@@ -46,6 +46,8 @@ class PerformerListTest {
     @Test
     fun recyclerPerformers_hasItems() {
         activityRule.scenario.onActivity {
+            Thread.sleep(6000)
+
             val rv = it.findViewById<RecyclerView>(R.id.recycler_performers)
             val adaptador = rv.adapter
 
