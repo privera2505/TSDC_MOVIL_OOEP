@@ -1,7 +1,7 @@
 package com.vinilo.data.repository
 
-import com.vinilo.data.remote.services.ApiClient
-import com.vinilo.data.remote.services.PerformerService
+import com.vinilo.data.remote.service.ApiClient
+import com.vinilo.data.remote.service.PerformerService
 import com.vinilo.domain.model.Performer
 
 class PerformerRepository {

@@ -1,4 +1,4 @@
-package com.vinilo.data.remote.services
+package com.vinilo.data.remote.service
 
 import com.vinilo.domain.model.Performer
 import retrofit2.http.GET

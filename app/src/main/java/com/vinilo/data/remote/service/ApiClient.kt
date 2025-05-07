@@ -1,4 +1,4 @@
-package com.vinilo.data.remote.services
+package com.vinilo.data.remote.service
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

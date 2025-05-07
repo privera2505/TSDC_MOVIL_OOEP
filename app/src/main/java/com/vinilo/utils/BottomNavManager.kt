@@ -1,4 +1,4 @@
-package com.vinilo.util
+package com.vinilo.utils
 
 import android.app.Activity
 import android.content.Intent
@@ -7,8 +7,6 @@ import android.widget.ImageButton
 import com.vinilo.view.R
 import com.vinilo.view.MainActivity
 import com.vinilo.view.AlbumDetailActivity
-import com.vinilo.viewmodel.PerformerViewModel
-import androidx.lifecycle.ViewModelProvider
 
 // Importa otras actividades si las tenés
 

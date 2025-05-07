@@ -1,8 +1,8 @@
-package com.vinilo.domain.model
+package com.vinilo.data.remote.dto
 
 import java.util.Date
 
-data class Album(
+data class AlbumDto(
     val id: Int,
     val name: String,
     val cover: String,
@@ -10,7 +10,5 @@ data class Album(
     val description: String,
     val genre: String,
     val recordLabel: String,
-    val performers: List<Performer>,
-    val tracks: List<Track>,
-    val comments: List<Comment>
+    val tracks: List<TrackDto>
 )

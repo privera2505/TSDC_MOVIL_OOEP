@@ -1,7 +1,7 @@
 package com.vinilo.data.repository
 
-import com.vinilo.data.remote.services.ApiClient
-import com.vinilo.data.remote.services.CollectorService
+import com.vinilo.data.remote.service.ApiClient
+import com.vinilo.data.remote.service.CollectorService
 import com.vinilo.domain.model.Collector
 
 class CollectorRepository {
