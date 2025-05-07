@@ -25,9 +25,9 @@ fun AlbumEntity.toDomain(): Album = Album(
     description = description,
     genre = genre,
     recordLabel = recordLabel,
-    performers = TODO(),
-    tracks = TODO(),
-    comments = TODO()
+    performers = emptyList(),
+    tracks = emptyList(),
+    comments = emptyList(),
 )
 
 fun TrackEntity.toDomain(): Track = Track(
