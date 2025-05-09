@@ -47,7 +47,6 @@ class BottomNavManager(
         btnAwards.setOnClickListener {
             selectButton(btnAwards)
             println("Click en Awards")
-            // TODO: Agrega el intent si tenés la Activity creada
         }
     }
 

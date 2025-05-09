@@ -1,9 +1,6 @@
 package com.vinilo.view
-
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.vinilo.view.R
 import com.vinilo.view.databinding.FragmentAlbumsBinding
 
 class AlbumDetailActivity : AppCompatActivity() {

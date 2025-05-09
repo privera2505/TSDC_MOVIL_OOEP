@@ -56,8 +56,6 @@ class ArtistsFragment : Fragment()  {
         super.onViewCreated(view, savedInstanceState)
 
         binding.root.setOnClickListener {
-            println("click en artista")
-            //findNavController().navigate(R.id.Artist)
         }
     }
 
