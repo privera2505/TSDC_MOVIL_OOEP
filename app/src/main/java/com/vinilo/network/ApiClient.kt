@@ -25,8 +25,8 @@ object ApiClient {
 
     private fun getUnsafeOkHttpClient(): OkHttpClient {
         val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
-            override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?) {}
-            override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) {}
+            override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?) {} // Noncompliant - method is empty because it needed for compatibility with lollipop
+            override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) {} // Noncompliant - method is empty because it needed for compatibility with lollipop
             override fun getAcceptedIssuers(): Array<X509Certificate> = arrayOf()
         })
 

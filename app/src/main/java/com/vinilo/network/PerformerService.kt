@@ -1,6 +1,5 @@
 package com.vinilo.network
 
-import com.vinilo.model.Album
 import com.vinilo.model.Performer
 import retrofit2.http.GET
 import retrofit2.http.Path

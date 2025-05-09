@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "440305695980",
+    "project_id": "vinilo-app-2b257",
+    "storage_bucket": "vinilo-app-2b257.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440305695980:android:95e0ae835c5a8724d639c9",
+        "android_client_info": {
+          "package_name": "com.vinilo.view"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5qmNC_viRgOd-d32Ty81KTR4hHPSCTok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

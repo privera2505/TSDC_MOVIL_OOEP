@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -72,6 +74,8 @@ dependencies {
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+    implementation (libs.org.jetbrains.kotlinx.kotlinx.coroutines.android)
+
     // Espresso core
     androidTestImplementation(libs.androidx.espresso.core.v351)
     androidTestImplementation(libs.androidx.fragment.testing)
@@ -90,5 +94,16 @@ dependencies {
     // Dependencias normales de test (unitarias)
     testImplementation(libs.junit)
 
+    //Firebase
+    // Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
 
+    // Firebase Performance (sin versión gracias al BoM)
+    implementation("com.google.firebase:firebase-perf-ktx")
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-analytics")
+
+    configurations.all {
+        exclude(group = "com.google.protobuf", module = "protobuf-lite")
+    }
 }

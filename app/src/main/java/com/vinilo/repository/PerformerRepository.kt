@@ -1,6 +1,5 @@
 package com.vinilo.repository
 
-import com.vinilo.model.Album
 import com.vinilo.network.ApiClient
 import com.vinilo.network.PerformerService
 import com.vinilo.model.Performer

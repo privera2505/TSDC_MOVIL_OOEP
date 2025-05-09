@@ -21,7 +21,6 @@ class AlbumsDetailViewModel : ViewModel() {
     fun fetchAlbums(id:Int) {
         viewModelScope.launch {
             try {
-                println("Valueid" + id)
                 val response = repository.getAlbumById(id)
                 album.value = response
             } catch (e: Exception) {

@@ -7,8 +7,6 @@ import android.widget.ImageButton
 import com.vinilo.view.R
 import com.vinilo.view.MainActivity
 import com.vinilo.view.AlbumDetailActivity
-import com.vinilo.viewmodel.PerformerViewModel
-import androidx.lifecycle.ViewModelProvider
 
 // Importa otras actividades si las tenés
 
@@ -49,7 +47,6 @@ class BottomNavManager(
         btnAwards.setOnClickListener {
             selectButton(btnAwards)
             println("Click en Awards")
-            // TODO: Agrega el intent si tenés la Activity creada
         }
     }
 
@@ -61,7 +58,6 @@ class BottomNavManager(
     }
 
     private fun setInitialState() {
-        // Marca uno por defecto si querés (opcional)
         btnAlbums.isSelected = true
     }
 }

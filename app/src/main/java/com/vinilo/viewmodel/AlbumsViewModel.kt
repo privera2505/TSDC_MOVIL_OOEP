@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vinilo.model.Album
 import com.vinilo.repository.AlbumRepository
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class AlbumsViewModel : ViewModel() {
@@ -18,7 +19,7 @@ class AlbumsViewModel : ViewModel() {
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
 
-    fun fetchAlbums() {
+    fun fetchAlbums(){
         viewModelScope.launch {
             try {
                 val response = repository.getAlbums()

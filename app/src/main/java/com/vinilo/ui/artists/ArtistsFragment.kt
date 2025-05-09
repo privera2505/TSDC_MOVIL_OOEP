@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.vinilo.model.Album
 import com.vinilo.model.Performer
 import com.vinilo.view.databinding.FragmentPerformersBinding
 import com.vinilo.viewmodel.PerformerViewModel
@@ -59,7 +57,6 @@ class ArtistsFragment : Fragment()  {
 
         binding.root.setOnClickListener {
             println("click en artista")
-            //findNavController().navigate(R.id.Artist)
         }
     }
 
