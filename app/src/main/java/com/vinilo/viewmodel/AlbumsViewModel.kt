@@ -1,16 +1,16 @@
 package com.vinilo.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.vinilo.model.Album
-import com.vinilo.repository.AlbumRepository
+import androidx.lifecycle.*
+import com.vinilo.data.repository.AlbumRepository
+import com.vinilo.domain.model.Album
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AlbumsViewModel : ViewModel() {
-
-    private val repository = AlbumRepository()
+@HiltViewModel
+class AlbumsViewModel @Inject constructor(
+    private val repository: AlbumRepository
+) : ViewModel() {
 
     private val _albums = MutableLiveData<List<Album>>()
     val albums: LiveData<List<Album>> = _albums
@@ -18,14 +18,10 @@ class AlbumsViewModel : ViewModel() {
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
 
+
     fun fetchAlbums() {
         viewModelScope.launch {
-            try {
-                val response = repository.getAlbums()
-                _albums.value = response
-            } catch (e: Exception) {
-                _error.value = "Error al obtener álbumes: ${e.message}"
-            }
+            _albums.value = repository.getAlbums()
         }
     }
 }

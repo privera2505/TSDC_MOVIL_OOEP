@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.vinilo.view.R
-import com.vinilo.model.Album
+import com.vinilo.domain.model.Album
 
 class AlbumAdapter(
     private val albums: List<Album>,

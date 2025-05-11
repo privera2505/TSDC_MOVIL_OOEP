@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.vinilo.model.Collector
+import com.vinilo.domain.model.Collector
 import com.vinilo.view.R
 
 class CollectorAdapter (

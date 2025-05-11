@@ -12,9 +12,11 @@ import com.bumptech.glide.Glide
 import com.vinilo.view.R
 import com.vinilo.view.databinding.FragmentAlbumDetailBinding
 import com.vinilo.viewmodel.AlbumsDetailViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Locale
 
+@AndroidEntryPoint
 class AlbumsDetailFragment : Fragment() {
     private var _binding: FragmentAlbumDetailBinding? = null
     private val binding get() = _binding!!
@@ -52,7 +54,7 @@ class AlbumsDetailFragment : Fragment() {
             binding.AlbumNameDescription.text = album.name
             binding.releaseDate.text = formattedDate
             binding.tracksAlbumDescription.text = album.description
-            binding.genraText.text = album.genre.displayName
+            binding.genraText.text = album.genre
         }
 
         albumViewModel.error.observe(viewLifecycleOwner) {
