@@ -43,10 +43,8 @@ object ApiClient {
     }
 
     val httpClient = if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
-        Log.d( "ApiClient", "Using unsafe OkHttpClient for Android versions <= Lollipop MR1 ${Build.VERSION.SDK_INT}")
         getUnsafeOkHttpClient()
     } else {
-        Log.d( "ApiClient", "Using safe OkHttpClient for Android versions > Lollipop MR1 ${Build.VERSION.SDK_INT}")
         getSafeOkHttpClient()
     }
 
