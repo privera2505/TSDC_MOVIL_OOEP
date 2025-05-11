@@ -109,19 +109,19 @@ Como se observa en la captura, se confirma su correcto funcionamiento.
 
 ## Detalle de Artista
 ### Casos probados:
-**verifyDetailElements**
+**verifyDetailElements:**
 Este caso permite validar que los principales elementos de la interfaz aparezcan en pantalla. Elementos como el título del artista, descripción, etc.
 
 **Resultado:**
 Como se observa en la captura, se confirma su correcto funcionamiento.
 
-**compareTitleListAndDetail**
+**compareTitleListAndDetail:**
 Este caso permite comparar el nombre del artista al que se le hace click versus el que aparece en el detalle del artista.
 
 **Resultado:**
 Como se observa en la captura, se confirma su correcto funcionamiento.
 
-**validDescriptionAndNameIsNotEmpty**
+**validDescriptionAndNameIsNotEmpty:**
 Este caso permite validar que el nombre y la descripción del artista aparezca y no esté vacia.
 
 **Resultado:**
@@ -132,19 +132,19 @@ Como se observa en la captura, se confirma su correcto funcionamiento.
 ## Listado de coleccionistas
 ### Casos probados:
 
-**verifyTitleListCollector**
+**verifyTitleListCollector:**
 Este caso permite validar que los principales elementos de la interfaz aparezcan en pantalla. Elementos como el título de la sección.
 
 **Resultado:**
 Como se observa en la captura, se confirma su correcto funcionamiento.
 
-**verifyListCollectors**
+**verifyListCollectors:**
 Este caso permite validar que la lista de coleccionistas sea visible en la pantalla.
 
 **Resultado:**
 Como se observa en la captura, se confirma su correcto funcionamiento.
 
-**recyclerCollector_hasItems**
+**recyclerCollector_hasItems:**
 Este caso permite validar el Recicler Collector contenga elementos dentro y los esté mostrando de forma correcta.
 
 **Resultado:**
