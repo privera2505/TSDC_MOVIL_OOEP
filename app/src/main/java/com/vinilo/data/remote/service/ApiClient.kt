@@ -5,6 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import android.os.Build
+import android.util.Log
 import java.security.SecureRandom
 import java.security.cert.X509Certificate
 import javax.net.ssl.*
@@ -41,9 +42,11 @@ object ApiClient {
             .build()
     }
 
-    private val httpClient = if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
+    val httpClient = if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
+        Log.d( "ApiClient", "Using unsafe OkHttpClient for Android versions <= Lollipop MR1 ${Build.VERSION.SDK_INT}")
         getUnsafeOkHttpClient()
     } else {
+        Log.d( "ApiClient", "Using safe OkHttpClient for Android versions > Lollipop MR1 ${Build.VERSION.SDK_INT}")
         getSafeOkHttpClient()
     }
 
