@@ -109,4 +109,4 @@ Este comando se encarga de compilar y ejecutar todas las pruebas instrumentadas 
 # Resultados de pruebas
 
 - [Resultados entrega 1](/app/src/androidTest/results/entrega-1/Entrega1.md)
-- 
+- [Resultados entrega 2](/app/src/androidTest/results/entrega-2/Entrega2.md)
