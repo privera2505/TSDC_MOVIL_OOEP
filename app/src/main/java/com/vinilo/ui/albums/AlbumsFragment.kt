@@ -6,18 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.vinilo.model.Album
+import com.vinilo.domain.model.Album
 import com.vinilo.viewmodel.AlbumsViewModel
 import com.vinilo.view.R
 import com.vinilo.view.databinding.FragmentAlbumsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AlbumsFragment : Fragment() {
 
-    private lateinit var albumViewModel: AlbumsViewModel
+    private val albumViewModel: AlbumsViewModel by viewModels()
     private lateinit var recyclerView: RecyclerView
     private lateinit var albumAdapter: AlbumAdapter
     private var _binding: FragmentAlbumsBinding? = null
@@ -32,7 +34,8 @@ class AlbumsFragment : Fragment() {
         recyclerView = binding.recyclerAlbums
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        albumViewModel = ViewModelProvider(this)[AlbumsViewModel::class.java]
+
+
 
         albumViewModel.albums.observe(viewLifecycleOwner) { albums ->
             albumAdapter = AlbumAdapter(albums, ::onAlbumClick)

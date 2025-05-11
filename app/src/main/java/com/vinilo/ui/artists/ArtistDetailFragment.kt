@@ -1,7 +1,6 @@
 package com.vinilo.ui.artists
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.vinilo.view.R
-import com.vinilo.view.databinding.FragmentAlbumDetailBinding
 import com.vinilo.view.databinding.FragmentPerformerDetailBinding
-import com.vinilo.viewmodel.AlbumsDetailViewModel
 import com.vinilo.viewmodel.PerformerDetailViewModel
-import java.text.SimpleDateFormat
-import java.util.Locale
 
 class ArtistDetailFragment : Fragment() {
     private var _binding: FragmentPerformerDetailBinding? = null
