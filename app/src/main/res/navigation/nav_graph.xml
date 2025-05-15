@@ -21,6 +21,14 @@
         android:name="com.vinilo.ui.collectors.CollectorsFragment"
         android:label="Coleccionistas" />
     <fragment
+        android:id="@+id/collectorDetailFragment"
+        android:name="com.vinilo.ui.collectors.CollectorDetailFragment"
+        android:label="Detalle de Coleccionista">
+        <argument
+            android:name="collectorId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
         android:id="@+id/AlbumDetailFragment"
         android:name="com.vinilo.ui.albums.AlbumsDetailFragment"
         android:label="Detalle de Album">
