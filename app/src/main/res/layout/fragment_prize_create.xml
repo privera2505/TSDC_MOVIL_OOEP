@@ -99,11 +99,24 @@
                         android:id="@+id/newPrizeName"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="Nombre"
                         android:textSize="15dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:textColor="@color/white"/>
                         />
+
+                    <EditText
+                        android:id="@+id/inputPrizeName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:hint="Nombre aquí"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColorHint="#B0B0B0"
+                        android:textColor="@color/white"
+                        android:maxLength="25"/>
 
 
                 </LinearLayout>
@@ -130,11 +143,29 @@
                         android:id="@+id/newPrizeDescription"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="Descripción"
                         android:textSize="15dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:textColor="@color/white"/>
-                    />
+
+                    <EditText
+                        android:id="@+id/inputPrizeDescription"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:hint="Descripción aquí"
+                        android:textSize="15dp"
+                        android:inputType="textMultiLine"
+                        android:maxLines="2"
+                        android:maxLength="80"
+                        android:scrollbars="vertical"
+                        android:overScrollMode="always"
+                        android:scrollHorizontally="false"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColorHint="#B0B0B0"
+                        android:textColor="@color/white"
+                        />
 
                 </LinearLayout>
 
@@ -160,10 +191,24 @@
                         android:id="@+id/newPrizeOrganization"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="Organización"
                         android:textSize="15dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:textColor="@color/white"/>
+
+                    <EditText
+                        android:id="@+id/inputPrizeOrganization"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:hint="Nombre aquí"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColorHint="#B0B0B0"
+                        android:textColor="@color/white"
+                        android:maxLength="25"/>
+
                     />
 
                 </LinearLayout>
