@@ -1,10 +1,19 @@
 package com.vinilo.domain.model
 
-import java.util.Date
-
-data class PerformerPrize (
+data class PerformerPrizeResponse (
 
     val id: Int,
-    val premiationDate: Date
+    val name: String,
+    val description: String,
+    val organization: String,
+    val performerPrizes: List<Any>
+
+)
+
+data class PerformerPrizeRequest (
+
+    val name: String,
+    val description: String,
+    val organization: String
 
 )

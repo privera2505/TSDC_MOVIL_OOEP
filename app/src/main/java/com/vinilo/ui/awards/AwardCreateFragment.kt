@@ -66,6 +66,10 @@ class AwardCreateFragment: Fragment() {
             viewModel.actualizarOrganization(it.toString())
         }
 
+        btnEnviar.setOnClickListener{
+            viewModel.createAward(prizeNombre.text.toString(),prizeDescripcion.text.toString(),prizeOrganization.text.toString())
+        }
+
     }
 
     fun changeButtonProperties(bool: Boolean, str: String){

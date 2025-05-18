@@ -4,8 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.vinilo.data.repository.AwardRepository
+import com.vinilo.domain.model.PerformerPrizeRequest
+import kotlinx.coroutines.launch
 
-class AwardCreateViewModel: ViewModel() {
+class AwardCreateViewModel (
+    private val repository: AwardRepository = AwardRepository()
+): ViewModel() {
 
     private val nombrePrize = MutableLiveData<String>()
     private val descripcionPrize = MutableLiveData<String>()
@@ -36,6 +42,18 @@ class AwardCreateViewModel: ViewModel() {
 
     fun actualizarOrganization(texto : String){
         organizacionPrize.value = texto
+    }
+
+    fun createAward(nombre: String, desc: String, organizacion: String) {
+        viewModelScope.launch {
+            try {
+                val request = PerformerPrizeRequest(nombre,desc,organizacion)
+                val response = repository.createAward(request)
+                println(response)
+            } catch (e: Exception) {
+                println("Exception: ${e.message}")
+            }
+        }
     }
 
 
