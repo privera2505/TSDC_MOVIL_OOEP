@@ -17,6 +17,10 @@
         android:name="com.vinilo.ui.awards.AwardsFragment"
         android:label="Premios" />
     <fragment
+        android:id="@+id/prizeCreateLayout"
+        android:name="com.vinilo.ui.awards.AwardCreateFragment"
+        android:label="Crear Premio" />
+    <fragment
         android:id="@+id/collectorsFragment"
         android:name="com.vinilo.ui.collectors.CollectorsFragment"
         android:label="Coleccionistas" />

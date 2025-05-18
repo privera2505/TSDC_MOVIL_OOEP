@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:andorid="http://schemas.android.com/tools"
     android:id="@+id/prizeCreateLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -36,6 +35,7 @@
 
                 <ImageButton
                     android:id="@+id/backBtnPrize"
+                    android:contentDescription="Volver a la lista de premios"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:background="@drawable/bg_button"
@@ -70,6 +70,7 @@
                     android:id="@+id/imagePrize"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:contentDescription="Icono de premio"
                     android:background="@drawable/bg_button"
                     android:src="@drawable/award_ico"
                     android:layout_marginHorizontal="10dp"
@@ -111,6 +112,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
+                        android:autofillHints="name"
+                        android:inputType="text"
                         android:hint="Nombre aquí"
                         android:textSize="15dp"
                         android:fontFamily="@font/poppins_semibold"
@@ -154,6 +157,7 @@
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:layout_marginStart="10dp"
+                        android:autofillHints="name"
                         android:hint="Descripción aquí"
                         android:textSize="15dp"
                         android:inputType="textMultiLine"
@@ -202,6 +206,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
+                        android:autofillHints="name"
+                        android:inputType="text"
                         android:hint="Nombre aquí"
                         android:textSize="15dp"
                         android:fontFamily="@font/poppins_semibold"
@@ -214,14 +220,16 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/btnCreatePrize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:backgroundTint="#1ED760"
+                    android:backgroundTint="#B0B0B0"
                     android:text="Crear premio"
                     android:textSize="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:enabled="false"/>
 
             </LinearLayout>
 
