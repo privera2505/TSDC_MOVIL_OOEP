@@ -14,4 +14,8 @@ class AwardRepository {
         return awardService.createAward(request)
     }
 
+    suspend fun getPrizes(): List<PerformerPrizeResponse> {
+        return awardService.getPrizes()
+    }
+
 }
