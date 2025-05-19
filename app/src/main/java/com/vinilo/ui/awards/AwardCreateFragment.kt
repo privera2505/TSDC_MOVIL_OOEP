@@ -2,12 +2,13 @@ package com.vinilo.ui.awards
 
 import android.graphics.Color
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -48,23 +49,28 @@ class AwardCreateFragment: Fragment() {
         prizeOrganization = view.findViewById(R.id.inputPrizeOrganization)
         btnEnviar = view.findViewById(R.id.btnCreatePrize)
 
-        viewModel.isFormularioValido.observe(viewLifecycleOwner) { esValido ->
-            if (esValido){
-                changeButtonProperties(true,"#1ED760")
-            }else{
-                changeButtonProperties(false,"#B0B0B0")
+        val textWatcher = object :  TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                val nombreNoVacio = prizeNombre.text.toString().isNotBlank()
+                val descNoVacia = prizeDescripcion.text.toString().isNotBlank()
+                val orgNoVacia = prizeOrganization.text.toString().isNotBlank()
+
+                if (nombreNoVacio && descNoVacia && orgNoVacia) {
+                    changeButtonProperties(true, "#1ED760")
+
+                }else{
+                    changeButtonProperties(false,"#B0B0B0")
+
+                }
+
             }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         }
 
-        prizeNombre.doAfterTextChanged {
-            viewModel.actualizarNombre(it.toString())
-        }
-        prizeDescripcion.doAfterTextChanged {
-            viewModel.actualizarDescripcion(it.toString())
-        }
-        prizeOrganization.doAfterTextChanged {
-            viewModel.actualizarOrganization(it.toString())
-        }
+        prizeNombre.addTextChangedListener(textWatcher)
+        prizeDescripcion.addTextChangedListener(textWatcher)
+        prizeOrganization.addTextChangedListener(textWatcher)
 
         btnEnviar.setOnClickListener{
             viewModel.createAward(prizeNombre.text.toString(),prizeDescripcion.text.toString(),prizeOrganization.text.toString())
