@@ -15,7 +15,9 @@ import com.vinilo.domain.model.Collector
 import com.vinilo.view.R
 import com.vinilo.view.databinding.FragmentCollectorBinding
 import com.vinilo.viewmodel.CollectorViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CollectorsFragment: Fragment()  {
 
     private lateinit var collectorViewModel: CollectorViewModel

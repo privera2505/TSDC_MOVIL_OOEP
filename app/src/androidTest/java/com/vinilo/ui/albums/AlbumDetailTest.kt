@@ -6,12 +6,14 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.UiController
 import androidx.test.espresso.ViewAction
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
+import com.vinilo.utils.RecyclerViewItemCountIdlingResource
 import com.vinilo.view.MainActivity
 import com.vinilo.view.R
 import org.junit.Before
@@ -27,14 +29,16 @@ class AlbumDetailTest {
 
     @Before
     fun setUp() {
-        // Simula clic en el botón (ajusta el ID a tu layout real)
         onView(withId(R.id.albumsFragment)).perform(click())
-
-        // Verifica que se muestra el título de la sección de álbumes
         onView(withId(R.id.appTitle))
             .check(matches(isDisplayed()))
 
-        //Ir al detalle del primer elemento
+        activityRule.scenario.onActivity { activity ->
+            val recyclerView = activity.findViewById<RecyclerView>(R.id.recycler_albums)
+            val idlingResource = RecyclerViewItemCountIdlingResource(recyclerView)
+            IdlingRegistry.getInstance().register(idlingResource)
+        }
+
         onView(withId(R.id.recycler_albums))
             .perform(
                 RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(

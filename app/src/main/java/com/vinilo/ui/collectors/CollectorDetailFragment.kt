@@ -41,6 +41,7 @@ class CollectorDetailFragment: Fragment() {
         }
 
         binding.recyclerCollectorComments.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerCollectorFavoritePerformer.layoutManager = LinearLayoutManager(requireContext())
 
         //Traer información de coleccionista
         collectorViewModel.collectors.observe(viewLifecycleOwner) { collector ->
@@ -50,12 +51,17 @@ class CollectorDetailFragment: Fragment() {
             //Año
             binding.detailCollectorEmail.text = collector.email
 
+            //Teléfono
+            binding.detailCollectorTelephone.text = collector.telephone
+
             //Comments del coleccionista
             val commentsCollectorList = collector.comments
             val commentsAdapter = CollectorCommentsAdapter(commentsCollectorList)
+            val favoritesPerformers = CollectorFavoritePerformer(collector.favoritePerformers)
 
-
+            //Pasar el datos a adatopador
             binding.recyclerCollectorComments.adapter = commentsAdapter
+            binding.recyclerCollectorFavoritePerformer.adapter = favoritesPerformers
 
         }
 
