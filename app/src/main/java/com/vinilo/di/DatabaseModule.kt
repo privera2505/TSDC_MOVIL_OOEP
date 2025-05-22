@@ -2,6 +2,8 @@ package com.vinilo.di
 
 import android.content.Context
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.vinilo.data.local.VinilosDatabase
 import com.vinilo.data.local.dao.AlbumDao
 import com.vinilo.data.local.dao.CollectorDao
@@ -20,11 +22,14 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): VinilosDatabase {
+
         return Room.databaseBuilder(
             context,
             VinilosDatabase::class.java,
             "vinilos_db"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides

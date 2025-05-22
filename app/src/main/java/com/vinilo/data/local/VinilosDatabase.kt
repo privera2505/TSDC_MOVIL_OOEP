@@ -16,7 +16,7 @@ import com.vinilo.utils.Converters
         AlbumEntity::class,
         TrackEntity::class,
         CollectorEntity::class
-    ], version = 1
+    ], version = 2
 )
 @TypeConverters(Converters::class)
 abstract class VinilosDatabase : RoomDatabase() {
