@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.vinilo.data.local.VinilosDatabase
 import com.vinilo.data.local.dao.AlbumDao
+import com.vinilo.data.local.dao.CollectorDao
 import com.vinilo.data.local.dao.TrackDao
 import dagger.Module
 import dagger.Provides
@@ -31,4 +32,7 @@ object DatabaseModule {
 
     @Provides
     fun provideTrackDao(db: VinilosDatabase): TrackDao = db.trackDao()
+
+    @Provides
+    fun provideCollectorDao(db: VinilosDatabase): CollectorDao = db.collectorDao()
 }

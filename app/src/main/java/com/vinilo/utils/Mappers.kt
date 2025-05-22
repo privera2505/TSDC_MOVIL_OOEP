@@ -3,8 +3,11 @@ package com.vinilo.utils
 import com.vinilo.data.remote.dto.AlbumDto
 import com.vinilo.data.local.entities.AlbumEntity
 import com.vinilo.data.local.entities.AlbumWithTracks
+import com.vinilo.data.local.entities.CollectorEntity
 import com.vinilo.data.local.entities.TrackEntity
+import com.vinilo.data.remote.dto.CollectorDto
 import com.vinilo.domain.model.Album
+import com.vinilo.domain.model.Collector
 import com.vinilo.domain.model.Track
 
 fun AlbumDto.toEntity(): AlbumEntity = AlbumEntity(
@@ -46,4 +49,36 @@ fun AlbumWithTracks.toDomain(): Album = Album(
     tracks = tracks.map { it.toDomain() },
     performers = emptyList(),
     comments = emptyList()
+)
+
+
+fun CollectorDto.toEntity(): CollectorEntity = CollectorEntity(
+    id = this.id,
+    name = this.name,
+    telephone = this.telephone,
+    email = this.email,
+    comments = this.comments,
+    favoritePerformers = this.favoritePerformers,
+    collectorAlbums = this.collectorAlbums
+)
+
+
+fun CollectorEntity.toDomain(): Collector = Collector(
+    id = this.id,
+    name = this.name,
+    telephone = this.telephone,
+    email = this.email,
+    comments = this.comments,
+    favoritePerformers = this.favoritePerformers,
+    collectorAlbums = this.collectorAlbums
+)
+
+fun CollectorDto.toDomain(): Collector = Collector(
+    id = this.id,
+    name = this.name,
+    telephone = this.telephone,
+    email = this.email,
+    comments = this.comments,
+    favoritePerformers = this.favoritePerformers,
+    collectorAlbums = this.collectorAlbums
 )

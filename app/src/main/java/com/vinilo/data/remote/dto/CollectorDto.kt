@@ -1,6 +1,10 @@
-package com.vinilo.domain.model
+package com.vinilo.data.remote.dto
 
-data class Collector (
+import com.vinilo.domain.model.CollectorAlbum
+import com.vinilo.domain.model.Comment
+import com.vinilo.domain.model.Performer
+
+class CollectorDto (
     val id: Int,
     val name: String,
     val telephone: String,

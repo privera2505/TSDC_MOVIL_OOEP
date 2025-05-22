@@ -4,32 +4,31 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vinilo.domain.model.Collector
 import com.vinilo.data.repository.CollectorRepository
+import com.vinilo.domain.model.Collector
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CollectorViewModel @Inject constructor(
+class CollectorDetailviewModel @Inject constructor(
     private val repository: CollectorRepository
-): ViewModel()  {
+) : ViewModel() {
 
-    private val _collectors = MutableLiveData<List<Collector>>()
-    val collectors: LiveData<List<Collector>> = _collectors
+    private val collector = MutableLiveData<Collector>()
+    val collectors: LiveData<Collector> = collector
 
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
 
-    fun fetchCollectors() {
+    fun fetchCollector(id: Int) {
         viewModelScope.launch {
             try {
-                val response = repository.getCollectors()
-                _collectors.value = response
+                val response = repository.getCollectorById(id)
+                collector.value = response
             } catch (e: Exception) {
-                _error.value = "Error al obtener coleccionistas: ${e.message}"
+                _error.value = "Error al obtener coleccionista: ${e.message}"
             }
         }
     }
-
 }
