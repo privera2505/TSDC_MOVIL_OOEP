@@ -8,22 +8,27 @@
         android:id="@+id/artistsFragment"
         android:name="com.vinilo.ui.artists.ArtistsFragment"
         android:label="Artistas" />
+
     <fragment
         android:id="@+id/albumsFragment"
         android:name="com.vinilo.ui.albums.AlbumsFragment"
         android:label="Álbumes" />
+
     <fragment
         android:id="@+id/awardsFragment"
         android:name="com.vinilo.ui.awards.AwardsFragment"
         android:label="Premios" />
+
     <fragment
         android:id="@+id/prizeCreateLayout"
         android:name="com.vinilo.ui.awards.AwardCreateFragment"
         android:label="Crear Premio" />
+
     <fragment
         android:id="@+id/collectorsFragment"
         android:name="com.vinilo.ui.collectors.CollectorsFragment"
         android:label="Coleccionistas" />
+
     <fragment
         android:id="@+id/collectorDetailFragment"
         android:name="com.vinilo.ui.collectors.CollectorDetailFragment"
@@ -32,6 +37,7 @@
             android:name="collectorId"
             app:argType="integer" />
     </fragment>
+
     <fragment
         android:id="@+id/AlbumDetailFragment"
         android:name="com.vinilo.ui.albums.AlbumsDetailFragment"
@@ -40,6 +46,7 @@
             android:name="albumId"
             app:argType="integer" />
     </fragment>
+
     <fragment
         android:id="@+id/ArtistDetailFragment"
         android:name="com.vinilo.ui.artists.ArtistDetailFragment"
@@ -48,4 +55,25 @@
             android:name="performerId"
             app:argType="integer" />
     </fragment>
+
+    <fragment
+        android:id="@+id/awardDetailFragment"
+        android:name="com.vinilo.ui.awards.AwardDetailFragment"
+        android:label="Detalle del Premio">
+        <argument
+            android:name="awardId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_awardDetailFragment_to_artistSelectFragment"
+            app:destination="@id/artistSelectFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/artistSelectFragment"
+        android:name="com.vinilo.ui.artist.ArtistSelectFragment"
+        android:label="Seleccionar Artista" />
+
+    <action
+        android:id="@+id/action_awardsFragment_to_awardDetailFragment"
+        app:destination="@id/awardDetailFragment" />
 </navigation>

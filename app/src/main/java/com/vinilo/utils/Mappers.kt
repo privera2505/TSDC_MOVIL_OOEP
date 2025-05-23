@@ -5,8 +5,10 @@ import com.vinilo.data.local.entities.AlbumEntity
 import com.vinilo.data.local.entities.AlbumWithTracks
 import com.vinilo.data.local.entities.CollectorEntity
 import com.vinilo.data.local.entities.TrackEntity
+import com.vinilo.data.remote.dto.AwardDto
 import com.vinilo.data.remote.dto.CollectorDto
 import com.vinilo.domain.model.Album
+import com.vinilo.domain.model.Award
 import com.vinilo.domain.model.Collector
 import com.vinilo.domain.model.Track
 
@@ -82,3 +84,11 @@ fun CollectorDto.toDomain(): Collector = Collector(
     favoritePerformers = this.favoritePerformers,
     collectorAlbums = this.collectorAlbums
 )
+fun AwardDto.toDomain(): Award {
+    return Award(
+        id = this.id,
+        name = this.name,
+        description = this.description ?: ""
+    )
+}
+
