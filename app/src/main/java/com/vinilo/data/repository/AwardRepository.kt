@@ -20,7 +20,7 @@ class AwardRepository @Inject constructor(
     }
 
     suspend fun getAwardById(id: Int): Award {
-        return awardService.getAwardById(id).toDomain()
+        return awardService.getPrizeById(id).toDomain()
     }
 
     suspend fun addWinnerToAward(awardId: Int, artistId: Int) {

@@ -88,7 +88,8 @@ fun AwardDto.toDomain(): Award {
     return Award(
         id = this.id,
         name = this.name,
-        description = this.description ?: ""
+        description = this.description ?: "",
+        organization = this.organization ?: "",
     )
 }
 

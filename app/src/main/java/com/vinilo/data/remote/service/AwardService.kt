@@ -19,7 +19,7 @@ interface AwardService {
     suspend fun getPrizes(): List<PerformerPrizeResponse>
 
     @GET("prizes/{id}")
-    suspend fun getAwardById(@Path("id") id: Int): AwardDto
+    suspend fun getPrizeById(@Path("id") id: Int): AwardDto
 
     @POST("prizes/{id}/winner")
     suspend fun addWinner(
