@@ -6,12 +6,15 @@ import androidx.lifecycle.ViewModel
 import com.vinilo.data.repository.PerformerRepository
 import com.vinilo.domain.model.Performer
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 
-class PerformerViewModel : ViewModel() {
-
-    private val repository = PerformerRepository()
+@HiltViewModel
+class PerformerViewModel @Inject constructor(
+    private val repository: PerformerRepository
+) : ViewModel() {
 
     private val _performers = MutableLiveData<List<Performer>>()
     val performers : LiveData<List<Performer>> = _performers
@@ -29,5 +32,17 @@ class PerformerViewModel : ViewModel() {
             }
         }
     }
+
+    fun fetchPerformersNotInPrize(prizeId: Int) {
+        viewModelScope.launch {
+            try {
+                val response = repository.getPerformersNotInPrize(prizeId)
+                _performers.value = response
+            } catch (e: Exception) {
+                _error.value = "Error al obtener artistas disponibles: ${e.message}"
+            }
+        }
+    }
+
 
 }

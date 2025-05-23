@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.vinilo.view.databinding.FragmentPrizeCreateBinding
 import com.vinilo.view.R
@@ -20,7 +20,7 @@ class AwardCreateFragment: Fragment() {
     private var _binding: FragmentPrizeCreateBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: AwardCreateViewModel
+    private val viewModel: AwardCreateViewModel by viewModels()
     private lateinit var prizeNombre: EditText
     private lateinit var prizeDescripcion: EditText
     private lateinit var prizeOrganization: EditText
@@ -41,8 +41,6 @@ class AwardCreateFragment: Fragment() {
         binding.backBtnPrize.setOnClickListener{
             findNavController().navigate(R.id.awardsFragment)
         }
-
-        viewModel = ViewModelProvider(this)[AwardCreateViewModel::class.java]
 
         prizeNombre = view.findViewById(R.id.inputPrizeName)
         prizeDescripcion = view.findViewById(R.id.inputPrizeDescription)

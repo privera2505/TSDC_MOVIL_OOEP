@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:src="@drawable/award_icon_placeholder"
             android:contentDescription="@string/award_icon"
-            android:tint="@android:color/white" />
+            app:tint="@android:color/white" />
 
         <!-- Nombre del premio -->
         <TextView
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_add"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:tint="@android:color/white"
+                app:tint="@android:color/white"
                 android:contentDescription="Agregar ganador" />
         </LinearLayout>
 

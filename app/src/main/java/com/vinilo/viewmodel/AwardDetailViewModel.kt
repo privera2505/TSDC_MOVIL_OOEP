@@ -35,4 +35,17 @@ class AwardDetailViewModel @Inject constructor(
             }
         }
     }
+
+    fun addWinner(prizeId: Int, artistId: Int, onSuccess: () -> Unit, onError: (String) -> Unit) {
+        viewModelScope.launch {
+            try {
+                repository.addWinnerToPrize(prizeId, artistId)
+                _winners.value = repository.getAwardWinners(prizeId) // Actualiza la lista
+                onSuccess()
+            } catch (e: Exception) {
+                onError("Error al agregar ganador: ${e.message}")
+            }
+        }
+    }
+
 }

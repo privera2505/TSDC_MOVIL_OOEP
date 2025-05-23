@@ -5,12 +5,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.vinilo.domain.model.User
 import com.vinilo.data.repository.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val repository: UserRepository
+) : ViewModel() {
+
     private val _user = MutableLiveData<User>()
     val user: LiveData<User> = _user
-
-    private val repository = UserRepository()
 
     fun loadUser() {
         val fetchedUser = repository.getUser()

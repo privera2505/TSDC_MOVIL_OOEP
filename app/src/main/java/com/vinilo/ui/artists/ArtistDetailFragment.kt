@@ -53,7 +53,7 @@ class ArtistDetailFragment : Fragment() {
             // Toast de error
         }
 
-        performerViewModel.fetchPerformers(performerId)
+        performerViewModel.fetchPerformer(performerId)
     }
 
     override fun onDestroyView() {

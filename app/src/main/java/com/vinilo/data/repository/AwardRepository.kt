@@ -27,4 +27,9 @@ class AwardRepository @Inject constructor(
     suspend fun getAwardWinners(awardId: Int): List<PerformerWinner> {
         return awardService.getAwardWinners(awardId).map { it.toDomain() }
     }
+
+    suspend fun addWinnerToPrize(prizeId: Int, artistId: Int) {
+        awardService.addWinner(prizeId, artistId)
+    }
+
 }

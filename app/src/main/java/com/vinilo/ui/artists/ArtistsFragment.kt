@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,11 +17,12 @@ import com.vinilo.view.R
 
 class ArtistsFragment : Fragment()  {
 
-    private lateinit var performerViewModel: PerformerViewModel
+    private val performerViewModel: PerformerViewModel by viewModels()
     private lateinit var recyclerView: RecyclerView
     private lateinit var performerAdapter: PerformerAdapter
     private var _binding: FragmentPerformersBinding? = null
     private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,8 +35,6 @@ class ArtistsFragment : Fragment()  {
 
 
         recyclerView.layoutManager = GridLayoutManager(requireContext(),3)
-
-        performerViewModel = ViewModelProvider(this)[PerformerViewModel::class.java]
 
         performerViewModel.performers.observe(viewLifecycleOwner) { performers ->
             performerAdapter = PerformerAdapter(performers, ::onPerformerClick)

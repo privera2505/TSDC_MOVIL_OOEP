@@ -6,11 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.vinilo.domain.model.Album
 import com.vinilo.domain.model.Collector
 import com.vinilo.view.R
 import com.vinilo.view.databinding.FragmentCollectorBinding
@@ -20,11 +19,11 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class CollectorsFragment: Fragment()  {
 
-    private lateinit var collectorViewModel: CollectorViewModel
     private lateinit var recyclerView: RecyclerView
     private lateinit var collectorAdapter: CollectorAdapter
     private var _binding: FragmentCollectorBinding? = null
     private val binding get() = _binding!!
+    private val collectorViewModel: CollectorViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,8 +35,6 @@ class CollectorsFragment: Fragment()  {
         recyclerView = binding.recyclerCollectors
 
         recyclerView.layoutManager = GridLayoutManager(requireContext(),1)
-
-        collectorViewModel = ViewModelProvider(this)[CollectorViewModel::class.java]
 
         collectorViewModel.collectors.observe(viewLifecycleOwner) { collectors ->
             collectorAdapter = CollectorAdapter(collectors, ::onCollectorlick)
