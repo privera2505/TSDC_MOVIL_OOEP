@@ -172,6 +172,18 @@
                     android:textColor="@color/white"
                     android:textSize="15dp" />
 
+                <!-- Listado de Ganadores -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerWinners"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:overScrollMode="never"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

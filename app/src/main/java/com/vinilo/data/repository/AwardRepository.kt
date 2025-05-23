@@ -4,6 +4,7 @@ import com.vinilo.data.remote.service.AwardService
 import com.vinilo.domain.model.Award
 import com.vinilo.domain.model.PerformerPrizeRequest
 import com.vinilo.domain.model.PerformerPrizeResponse
+import com.vinilo.domain.model.PerformerWinner
 import com.vinilo.utils.toDomain
 import javax.inject.Inject
 
@@ -23,7 +24,7 @@ class AwardRepository @Inject constructor(
         return awardService.getPrizeById(id).toDomain()
     }
 
-    suspend fun addWinnerToAward(awardId: Int, artistId: Int) {
-        awardService.addWinner(awardId, mapOf("artistId" to artistId))
+    suspend fun getAwardWinners(awardId: Int): List<PerformerWinner> {
+        return awardService.getAwardWinners(awardId).map { it.toDomain() }
     }
 }

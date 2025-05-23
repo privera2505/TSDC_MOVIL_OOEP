@@ -43,6 +43,11 @@ class AwardDetailFragment : Fragment() {
             binding.awardOrganization.setText(award.organization)
         }
 
+        viewModel.winners.observe(viewLifecycleOwner) { winners ->
+            val adapter = AwardWinnersAdapter(winners)
+            binding.recyclerWinners.adapter = adapter
+        }
+
         viewModel.error.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
         }

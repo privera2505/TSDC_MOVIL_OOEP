@@ -46,4 +46,5 @@ class Converters {
         val listType = object : TypeToken<List<CollectorAlbum>>() {}.type
         return gson.fromJson(value, listType)
     }
+
 }
