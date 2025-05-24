@@ -6,17 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vinilo.view.databinding.FragmentPrizeBinding
 import com.vinilo.view.R
 import com.vinilo.viewmodel.AwardsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-class AwardsFragment: Fragment() {
+@AndroidEntryPoint
+class AwardsFragment : Fragment() {
 
-    private lateinit var awardsViewModel: AwardsViewModel
+    private val awardsViewModel: AwardsViewModel by viewModels()
     private lateinit var recyclerView: RecyclerView
     private lateinit var awardsAdapter: AwardsAdapter
     private var _binding: FragmentPrizeBinding? = null
@@ -27,21 +29,25 @@ class AwardsFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPrizeBinding.inflate(inflater,container,false)
+        _binding = FragmentPrizeBinding.inflate(inflater, container, false)
 
         recyclerView = binding.recyclerAwards
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        recyclerView.layoutManager = GridLayoutManager(requireContext(),2)
+        awardsViewModel.awards.observe(viewLifecycleOwner) { awards ->
+            awardsAdapter = AwardsAdapter(awards) { awardId ->
+                val bundle = Bundle().apply {
+                    putInt("awardId", awardId)
+                }
+                findNavController().navigate(R.id.awardDetailFragment, bundle)
 
-        awardsViewModel = ViewModelProvider(this)[AwardsViewModel::class.java]
-
-        awardsViewModel.awards.observe(viewLifecycleOwner) {awards ->
-            awardsAdapter = AwardsAdapter(awards)
+            }
             recyclerView.adapter = awardsAdapter
         }
 
-        awardsViewModel.error.observe(viewLifecycleOwner) {errors ->
-            Toast.makeText(requireContext(),errors, Toast.LENGTH_SHORT).show()
+
+        awardsViewModel.error.observe(viewLifecycleOwner) { errors ->
+            Toast.makeText(requireContext(), errors, Toast.LENGTH_SHORT).show()
         }
 
         awardsViewModel.fetchAwards()
@@ -52,10 +58,9 @@ class AwardsFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.addButtonPrize.setOnClickListener{
+        binding.addButtonPrize.setOnClickListener {
             findNavController().navigate(R.id.prizeCreateLayout)
         }
-
     }
 
     override fun onDestroyView() {
