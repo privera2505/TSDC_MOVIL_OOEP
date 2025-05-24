@@ -2,10 +2,9 @@ package com.vinilo.di
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
 import com.vinilo.data.local.VinilosDatabase
 import com.vinilo.data.local.dao.AlbumDao
+import com.vinilo.data.local.dao.AwardDao
 import com.vinilo.data.local.dao.CollectorDao
 import com.vinilo.data.local.dao.TrackDao
 import dagger.Module
@@ -40,4 +39,8 @@ object DatabaseModule {
 
     @Provides
     fun provideCollectorDao(db: VinilosDatabase): CollectorDao = db.collectorDao()
+
+    @Provides
+    fun provideAwardDao(db: VinilosDatabase): AwardDao = db.awardDao()
+
 }

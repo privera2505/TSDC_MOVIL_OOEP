@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken
 import com.vinilo.domain.model.CollectorAlbum
 import com.vinilo.domain.model.Comment
 import com.vinilo.domain.model.Performer
+import com.vinilo.domain.model.PerformerPrize
 import java.util.Date
 
 class Converters {
@@ -46,5 +47,16 @@ class Converters {
         val listType = object : TypeToken<List<CollectorAlbum>>() {}.type
         return gson.fromJson(value, listType)
     }
+
+    //Conversores para List<PerformerPrize>
+    @TypeConverter
+    fun fromPerformerPrizes(value: List<PerformerPrize>): String = gson.toJson(value)
+
+    @TypeConverter
+    fun toPerformerPrizesList(value: String): List<PerformerPrize> {
+        val listType = object : TypeToken<List<PerformerPrize>>() {}.type
+        return gson.fromJson(value, listType)
+    }
+
 
 }

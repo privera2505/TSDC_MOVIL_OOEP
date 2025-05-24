@@ -1,10 +1,10 @@
 package com.vinilo.data.remote.service
 
 import com.vinilo.data.remote.dto.AwardDto
+import com.vinilo.data.remote.dto.AwardReponseDto
 import com.vinilo.data.remote.dto.PerformanceRequestDto
 import com.vinilo.data.remote.dto.PerformerWinnerDto
 import com.vinilo.domain.model.PerformerPrizeRequest
-import com.vinilo.domain.model.PerformerPrizeResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -15,10 +15,10 @@ interface AwardService {
     @POST("prizes")
     suspend fun createAward(
         @Body award: PerformerPrizeRequest
-    ): PerformerPrizeResponse
+    ): AwardReponseDto
 
     @GET("prizes")
-    suspend fun getPrizes(): List<PerformerPrizeResponse>
+    suspend fun getPrizes(): List<AwardReponseDto>
 
     @GET("prizes/{id}")
     suspend fun getPrizeById(@Path("id") id: Int): AwardDto

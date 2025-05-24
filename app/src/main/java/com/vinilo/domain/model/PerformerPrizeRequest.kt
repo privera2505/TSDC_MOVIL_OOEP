@@ -6,7 +6,7 @@ data class PerformerPrizeResponse (
     val name: String,
     val description: String,
     val organization: String,
-    val performerPrizes: List<Any>
+    val performerPrizes: List<PerformerPrize>?
 
 )
 

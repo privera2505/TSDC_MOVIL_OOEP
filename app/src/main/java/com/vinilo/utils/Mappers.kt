@@ -3,9 +3,11 @@ package com.vinilo.utils
 import com.vinilo.data.remote.dto.AlbumDto
 import com.vinilo.data.local.entities.AlbumEntity
 import com.vinilo.data.local.entities.AlbumWithTracks
+import com.vinilo.data.local.entities.AwardEntity
 import com.vinilo.data.local.entities.CollectorEntity
 import com.vinilo.data.local.entities.TrackEntity
 import com.vinilo.data.remote.dto.AwardDto
+import com.vinilo.data.remote.dto.AwardReponseDto
 import com.vinilo.data.remote.dto.CollectorDto
 import com.vinilo.data.remote.dto.PerformerDto
 import com.vinilo.data.remote.dto.PerformerWinnerDto
@@ -13,6 +15,7 @@ import com.vinilo.domain.model.Album
 import com.vinilo.domain.model.Award
 import com.vinilo.domain.model.Collector
 import com.vinilo.domain.model.Performer
+import com.vinilo.domain.model.PerformerPrizeResponse
 import com.vinilo.domain.model.PerformerWinner
 import com.vinilo.domain.model.Track
 import java.text.SimpleDateFormat
@@ -111,9 +114,26 @@ fun AwardDto.toDomain(): Award {
         id = this.id,
         name = this.name,
         description = this.description ?: "",
-        organization = this.organization ?: "",
+        organization = this.organization ?: ""
     )
 }
+
+fun AwardReponseDto.toEntity(): AwardEntity = AwardEntity(
+    id = this.id,
+    name = this.name,
+    description = this.description,
+    organization = this.organization,
+    performerPrizes = this.performerPrizes ?: emptyList()
+)
+
+fun AwardEntity.toDomain(): PerformerPrizeResponse = PerformerPrizeResponse(
+        id = this.id,
+        name = this.name,
+        description = this.description,
+        organization = this.organization,
+        performerPrizes = this.performerPrizes ?: emptyList()
+    )
+
 
 fun PerformerWinnerDto.toDomain(): PerformerWinner {
     val performerDomain = performer.toDomain()
