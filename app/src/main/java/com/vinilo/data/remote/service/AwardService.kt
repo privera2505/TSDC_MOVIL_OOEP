@@ -25,4 +25,10 @@ interface AwardService {
     @GET("prizes/{awardId}/performers")
     suspend fun getAwardWinners(@Path("awardId") awardId: Int): List<PerformerWinnerDto>
 
+    @POST("/prizes/{prizeId}/musicians/{artistId}")
+    suspend fun addWinner(
+        @Path("prizeId") prizeId: Int,
+        @Path("artistId") artistId: Int
+    )
+
 }

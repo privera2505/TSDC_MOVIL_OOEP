@@ -68,12 +68,18 @@
             app:destination="@id/artistSelectFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/artistSelectFragment"
-        android:name="com.vinilo.ui.artist.ArtistSelectFragment"
-        android:label="Seleccionar Artista" />
-
     <action
         android:id="@+id/action_awardsFragment_to_awardDetailFragment"
         app:destination="@id/awardDetailFragment" />
+
+    <fragment
+        android:id="@+id/artistSelectFragment"
+        android:name="com.vinilo.ui.artist.ArtistSelectFragment"
+        android:label="Seleccionar Artista">
+        <argument
+            android:name="awardId"
+            app:argType="integer" />
+    </fragment>
+
+
 </navigation>

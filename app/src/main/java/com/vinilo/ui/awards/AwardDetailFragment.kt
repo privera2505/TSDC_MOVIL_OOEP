@@ -52,9 +52,10 @@ class AwardDetailFragment : Fragment() {
             Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
         }
 
-        binding.btnCreatePrize.setOnClickListener {
+
+        binding.addWinnerButton.setOnClickListener {
             val bundle = Bundle().apply { putInt("awardId", awardId) }
-            findNavController().navigate(R.id.action_awardDetailFragment_to_artistSelectFragment, bundle)
+            findNavController().navigate(R.id.artistSelectFragment, bundle)
         }
 
         binding.backBtnPrize.setOnClickListener {

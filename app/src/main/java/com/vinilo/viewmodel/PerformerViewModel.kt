@@ -3,18 +3,22 @@ package com.vinilo.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.vinilo.data.remote.service.ApiClient
+import com.vinilo.data.remote.service.AwardService
+import com.vinilo.data.remote.service.PerformerService
 import com.vinilo.data.repository.PerformerRepository
 import com.vinilo.domain.model.Performer
-import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-
 
 class PerformerViewModel : ViewModel() {
 
-    private val repository = PerformerRepository()
+    private val performerService = ApiClient.retrofit.create(PerformerService::class.java)
+    private val awardService = ApiClient.retrofit.create(AwardService::class.java)
+    private val repository = PerformerRepository(performerService, awardService)
 
     private val _performers = MutableLiveData<List<Performer>>()
-    val performers : LiveData<List<Performer>> = _performers
+    val performers: LiveData<List<Performer>> = _performers
 
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
@@ -30,4 +34,30 @@ class PerformerViewModel : ViewModel() {
         }
     }
 
+    fun fetchPerformersNotInPrize(prizeId: Int) {
+        viewModelScope.launch {
+            try {
+                val response = repository.getPerformersNotInPrize(prizeId)
+                _performers.value = response
+            } catch (e: Exception) {
+                _error.value = "Error al obtener artistas disponibles: ${e.message}"
+            }
+        }
+    }
+
+    fun addWinnerToPrize(
+        prizeId: Int,
+        artistId: Int,
+        onSuccess: () -> Unit,
+        onError: (String) -> Unit
+    ) {
+        viewModelScope.launch {
+            try {
+                repository.addWinnerToPrize(prizeId, artistId)
+                onSuccess()
+            } catch (e: Exception) {
+                onError("Error al asociar artista: ${e.message}")
+            }
+        }
+    }
 }
