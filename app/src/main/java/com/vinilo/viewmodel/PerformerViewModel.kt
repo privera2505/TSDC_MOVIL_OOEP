@@ -10,6 +10,10 @@ import com.vinilo.data.remote.service.PerformerService
 import com.vinilo.data.repository.PerformerRepository
 import com.vinilo.domain.model.Performer
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+import java.util.TimeZone
 
 class PerformerViewModel : ViewModel() {
 
@@ -53,11 +57,17 @@ class PerformerViewModel : ViewModel() {
     ) {
         viewModelScope.launch {
             try {
-                repository.addWinnerToPrize(prizeId, artistId)
+                val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+                dateFormat.timeZone = TimeZone.getTimeZone("GMT-05:00")
+                val formattedDate = dateFormat.format(Date())
+
+
+                repository.addWinnerToPrize(prizeId, artistId, formattedDate)
                 onSuccess()
             } catch (e: Exception) {
                 onError("Error al asociar artista: ${e.message}")
             }
         }
     }
+
 }

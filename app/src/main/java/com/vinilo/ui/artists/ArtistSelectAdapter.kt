@@ -25,6 +25,7 @@ class ArtistSelectAdapter(
         holder.name.text = artist.name
         Glide.with(holder.itemView.context)
             .load(artist.image)
+            .circleCrop()
             .into(holder.image)
         holder.itemView.setOnClickListener { onClick(artist) }
     }

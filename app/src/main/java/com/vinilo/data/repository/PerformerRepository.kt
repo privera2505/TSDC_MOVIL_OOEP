@@ -1,5 +1,6 @@
 package com.vinilo.data.repository
 
+import com.vinilo.data.remote.dto.PerformanceRequestDto
 import com.vinilo.data.remote.service.AwardService
 import com.vinilo.data.remote.service.PerformerService
 import com.vinilo.domain.model.Performer
@@ -25,7 +26,8 @@ class PerformerRepository(
         return allPerformers.filter { it.id !in prizeWinners }
     }
 
-    suspend fun addWinnerToPrize(prizeId: Int, artistId: Int) {
-        awardService.addWinner(prizeId, artistId)
+    suspend fun addWinnerToPrize(prizeId: Int, artistId: Int, date: String) {
+        val request = PerformanceRequestDto(premiationDate = date)
+        awardService.addWinner(prizeId, artistId, request)
     }
 }

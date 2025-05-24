@@ -1,6 +1,7 @@
 package com.vinilo.data.remote.service
 
 import com.vinilo.data.remote.dto.AwardDto
+import com.vinilo.data.remote.dto.PerformanceRequestDto
 import com.vinilo.data.remote.dto.PerformerWinnerDto
 import com.vinilo.domain.model.PerformerPrizeRequest
 import com.vinilo.domain.model.PerformerPrizeResponse
@@ -28,7 +29,8 @@ interface AwardService {
     @POST("/prizes/{prizeId}/musicians/{artistId}")
     suspend fun addWinner(
         @Path("prizeId") prizeId: Int,
-        @Path("artistId") artistId: Int
+        @Path("artistId") artistId: Int,
+        @Body request: PerformanceRequestDto
     )
 
 }

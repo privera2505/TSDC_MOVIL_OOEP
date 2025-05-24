@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vinilo.view.databinding.FragmentArtistSelectBinding
 import com.vinilo.viewmodel.PerformerViewModel
-import com.vinilo.ui.artists.ArtistSelectAdapter
+import androidx.navigation.fragment.findNavController
 import com.vinilo.domain.model.Performer
 
 class ArtistSelectFragment : Fragment() {
@@ -54,6 +54,10 @@ class ArtistSelectFragment : Fragment() {
 
         performerViewModel.error.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+        }
+
+        binding.backBtnDetailPrize.setOnClickListener {
+            findNavController().popBackStack()
         }
 
         performerViewModel.fetchPerformersNotInPrize(awardId)
