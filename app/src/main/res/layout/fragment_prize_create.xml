@@ -99,7 +99,7 @@
                     <TextView
                         android:id="@+id/newPrizeName"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="48dp"
                         android:gravity="center"
                         android:text="Nombre"
                         android:textSize="15dp"
@@ -110,7 +110,7 @@
                     <EditText
                         android:id="@+id/inputPrizeName"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="48dp"
                         android:layout_marginStart="10dp"
                         android:autofillHints="name"
                         android:inputType="text"
@@ -145,7 +145,7 @@
                     <TextView
                         android:id="@+id/newPrizeDescription"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="48dp"
                         android:gravity="center"
                         android:text="Descripción"
                         android:textSize="15dp"
@@ -154,7 +154,7 @@
 
                     <EditText
                         android:id="@+id/inputPrizeDescription"
-                        android:layout_height="match_parent"
+                        android:layout_height="48dp"
                         android:layout_width="match_parent"
                         android:layout_marginStart="10dp"
                         android:autofillHints="name"
@@ -194,7 +194,7 @@
                     <TextView
                         android:id="@+id/newPrizeOrganization"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="48dp"
                         android:gravity="center"
                         android:text="Organización"
                         android:textSize="15dp"
@@ -204,7 +204,7 @@
                     <EditText
                         android:id="@+id/inputPrizeOrganization"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="48dp"
                         android:layout_marginStart="10dp"
                         android:autofillHints="name"
                         android:inputType="text"

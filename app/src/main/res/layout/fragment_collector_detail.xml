@@ -41,6 +41,7 @@
                     android:id="@+id/backBtnCollectors"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
+                    android:contentDescription="Volver a coleccionistas"
                     android:background="@drawable/bg_button"
                     android:src="@drawable/back_ico"
                     android:scaleType="center"/>
