@@ -15,7 +15,9 @@ import androidx.navigation.fragment.findNavController
 import com.vinilo.view.databinding.FragmentPrizeCreateBinding
 import com.vinilo.view.R
 import com.vinilo.viewmodel.AwardCreateViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AwardCreateFragment: Fragment() {
     private var _binding: FragmentPrizeCreateBinding? = null
     private val binding get() = _binding!!
