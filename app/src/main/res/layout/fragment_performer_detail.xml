@@ -42,7 +42,8 @@
                     android:layout_height="60dp"
                     android:background="@drawable/bg_button"
                     android:src="@drawable/back_ico"
-                    android:scaleType="center"/>
+                    android:scaleType="center"
+                    android:contentDescription="Volver a atras"/>
 
                 <TextView
                     android:id="@+id/albumSectionTitle"
@@ -60,6 +61,7 @@
                 <ImageButton
                     android:layout_width="60dp"
                     android:layout_height="60dp"
+                    android:contentDescription="Compartir artista"
                     android:background="@drawable/bg_button"
                     android:src="@drawable/share_ico"
                     android:scaleType="center"/>
