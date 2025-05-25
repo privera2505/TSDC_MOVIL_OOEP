@@ -48,7 +48,6 @@ class CollectorCommentsAdapter(
 
     class CollectorCommentsAdapterHolder(view: View) : RecyclerView.ViewHolder(view) {
         val collectorCommentDescription: TextView = view.findViewById(R.id.descriptionComment)
-        //val collectorCommentRating: TextView = view.findViewById(R.id.rating)
         val commentRatingStars: LinearLayout = view.findViewById(R.id.rating)
     }
 }

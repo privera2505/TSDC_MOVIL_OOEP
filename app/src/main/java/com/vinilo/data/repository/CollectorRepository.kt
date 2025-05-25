@@ -1,11 +1,6 @@
 package com.vinilo.data.repository
 
-import com.vinilo.data.local.dao.AlbumDao
 import com.vinilo.data.local.dao.CollectorDao
-import com.vinilo.data.local.dao.TrackDao
-import com.vinilo.data.local.entities.TrackEntity
-import com.vinilo.data.remote.service.AlbumService
-import com.vinilo.data.remote.service.ApiClient
 import com.vinilo.data.remote.service.CollectorService
 import com.vinilo.domain.model.Collector
 import com.vinilo.utils.toDomain
@@ -19,8 +14,6 @@ class CollectorRepository @Inject constructor(
     private val collectorService: CollectorService
 ) {
 
-    /*private val collectorService: CollectorService =
-        ApiClient.retrofit.create(CollectorService::class.java)*/
 
     suspend fun getCollectors(): List<Collector> {
         val local = collectorDao.getCollectors()
