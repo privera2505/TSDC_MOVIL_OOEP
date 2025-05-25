@@ -4,16 +4,18 @@ En la estrategia de pruebas de la primera semana se consideran principalmente lo
 
 # Funcionalidades
 
-| Función                              | Descripción                         |
-|--------------------------------------|-------------------------------------|
-| Consultar catálogo de álbumes        | Ver lista de álbumes disponibles    |
-| Consultar información de un álbum    | Ver detalles de un álbum específico |
-| Consultar catálogo de artistas       | Ver lista de artistas disponibles   |
-| Consultar información de un artista  | Ver detalle de un artista           |
-| Consultar catálogo de collecionistas | Ver lista de coleccionistas         |
+| Función                                   | Descripción                         |
+|-------------------------------------------|-------------------------------------|
+| Consultar catálogo de álbumes             | Ver lista de álbumes disponibles    |
+| Consultar información de un álbum         | Ver detalles de un álbum específico |
+| Consultar catálogo de artistas            | Ver lista de artistas disponibles   |
+| Consultar información de un artista       | Ver detalle de un artista           |
+| Consultar catálogo de collecionistas      | Ver lista de coleccionistas         |
+| Consultar información de un collecionista | Ver detalle de un coleccionista     |
+| Consultar catálogo de premios             | Ver lista de premios                |
+| Agregar un premio a un artista            | Asociar un premio a un artista      |
 
-Mayor detalle en el link de la [estrategia de pruebas](https://docs.google.com/document/d/1wCbXwYll5YlUlBj6UDtJOGkUsACY57r5/edit)
-
+Mayor detalle en el link de la [estrategia de pruebas](https://docs.google.com/document/d/1zkCl3SkB2goouLqryrXAIMd8NIvxeUEX/edit)
 
 Resultados Pruebas realizadas en la funcionalidad #1 Consultar catálogo de álbumes
 
