@@ -1,6 +1,5 @@
 package com.vinilo.ui.awards
 
-import androidx.recyclerview.widget.RecyclerView
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.vinilo.view.MainActivity
@@ -13,7 +12,6 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.espresso.action.ViewActions.*
 import org.junit.Test
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import org.junit.Assert.assertTrue
 import org.hamcrest.Matchers.not
 import java.util.UUID
 
@@ -49,7 +47,7 @@ class AwardCreateTest {
         fillEditText()
         onView(withId(R.id.btnCreatePrize)).perform(click())
         Thread.sleep(2000)
-
+        onView(withId(R.id.CreateSuccessAward)).check(matches(isDisplayed()))
     }
 
     fun fillEditText(){
