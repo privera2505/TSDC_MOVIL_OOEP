@@ -11,7 +11,8 @@ import com.vinilo.domain.model.Collector
 import com.vinilo.view.R
 
 class CollectorAdapter (
-    private val collectors: List<Collector>
+    private val collectors: List<Collector>,
+    private val onCollectorClick: (Collector) -> Unit
 ) : RecyclerView.Adapter<CollectorAdapter.CollectorViewHolder>()
 {
 
@@ -28,6 +29,10 @@ class CollectorAdapter (
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_user)
             .into(holder.collectorImage)
+
+        holder.itemView.setOnClickListener {
+            onCollectorClick(collector)
+        }
     }
 
     override fun getItemCount(): Int {

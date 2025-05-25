@@ -6,11 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vinilo.domain.model.Collector
 import com.vinilo.data.repository.CollectorRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CollectorViewModel: ViewModel()  {
-
-    private val repository = CollectorRepository()
+@HiltViewModel
+class CollectorViewModel @Inject constructor(
+    private val repository: CollectorRepository
+): ViewModel()  {
 
     private val _collectors = MutableLiveData<List<Collector>>()
     val collectors: LiveData<List<Collector>> = _collectors

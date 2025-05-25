@@ -2,6 +2,8 @@ package com.vinilo.di
 
 import com.vinilo.data.remote.service.AlbumService
 import com.vinilo.data.remote.service.ApiClient
+import com.vinilo.data.remote.service.AwardService
+import com.vinilo.data.remote.service.CollectorService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,4 +36,16 @@ object NetworkModule {
     @Provides
     fun provideAlbumService(retrofit: Retrofit): AlbumService =
         retrofit.create(AlbumService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideCollectorService(retrofit: Retrofit): CollectorService {
+        return retrofit.create(CollectorService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideAwardService(retrofit: Retrofit): AwardService {
+        return retrofit.create(AwardService::class.java)
+    }
 }

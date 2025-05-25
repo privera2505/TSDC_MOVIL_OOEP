@@ -11,7 +11,7 @@ Vinilo App es una aplicación móvil desarrollada para dispositivos Android que 
 
 # Descarga e Instalación APK
 
-1. Descarga el archivo APK desde [Enlace APK](APK/Entrega%202).
+1. Descarga el archivo APK desde [Enlace APK](APK/Entrega%203).
 2. En tu dispositivo Android, ve a Configuración > Seguridad y habilita la opción Fuentes desconocidas.
 3. Navega hasta la carpeta donde se descargó el archivo APK.
 4. Pulsa sobre el archivo APK para instalar.
@@ -110,4 +110,5 @@ Este comando se encarga de compilar y ejecutar todas las pruebas instrumentadas 
 
 - [Resultados entrega 1](/app/src/androidTest/results/entrega-1/Entrega1.md)
 - [Resultados entrega 2](/app/src/androidTest/results/entrega-2/Entrega2.md)
+- [Resultado_entrega_3](/app/src/androidTest/results/entrega-3/Entrega3.md)
 
